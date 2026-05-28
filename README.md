@@ -7,11 +7,19 @@ easier to deal with.
 (Yes, it comes with many downsides, but this fork has a specific purpose with a preset configuration).
 OSSP does not use much of LSP Plugins (A couple filters and the LV2 backend), but it does support many operating systems
 that upstream LSP Plugins does not support. As I have added support for these operating systems (Multiple BSDs, Android
-in progress), the build system has become a huge pain point. This solves that.
+in progress), the build system has become a huge pain point. This solves that.<br>
 
-## Note
-Sorry that the code is a mess, I wrote this (the PoC) in a single day from 3AM to 3PM, and am honestly still surprised that it works.
-Code cleanup will happen at a future date.
+The patched source code and patches are based off LSP Plugins release version 1.2.29.
+The `patched_src` folder contains the required parts of the LSP Plugins source code, while the `patches` directory
+contain the `.patch` files.
+
+## Dependencies
+The only (dynamically linked) runtime dependency when used as an LV2 component is `libsndfile`.
+A static version of `libsndfile` cannot be linked into `lsp-plugins-lv2.so` (at least in an Android
+context using the Android NDK) because it, for some reason unbeknownst to me, somehow enables `GWP-ASan`,
+which Bionic LibC's `libdl()` seems to absolutely hate. I haven't tested this on other platforms at this time
+(2026/05/28) as this out-of-tree build system doesn't support x86_64 yet. This is very easy to work around though,
+as you can just load `libsndfile.so` using `System.loadLibrary()` at application init time.
 
 ## How to use
 The current PoC will only work on GLibC aarch64 (Tested on a Raspberry Pi)<br>
