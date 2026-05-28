@@ -1,0 +1,997 @@
+{
+	"3d": {
+		"3d_model": "Модель 3D",
+		"angle": "Угол",
+		"camera": "Камера",
+		"curvature": "Кривизна",
+		"distance": "Расстояние",
+		"height": "Высота",
+		"move_x": "Смещ X",
+		"move_y": "Смещ Y",
+		"move_z": "Смещ Z",
+		"pitch": "Наклон",
+		"roll": "Крен",
+		"s_ize_x:": "Разм X:",
+		"s_ize_y:": "Разм Y:",
+		"s_ize_z:": "Разм Z:",
+		"scale_x": "Масш X",
+		"scale_y": "Масш Y",
+		"scale_z": "Масш Z",
+		"size": "Размер",
+		"size_x:": "Разм X:",
+		"size_y:": "Разм Y:",
+		"size_z:": "Разм Z:",
+		"shape": "Фигура",
+		"x_axis": "Ось X",
+		"y_axis": "Ось Y",
+		"yaw": "Поворот",
+		"z_axis": "Ось Z"
+	},
+
+	"Env_elope": "Огиб",
+	"Over_Sampling": "П/Д",
+	"Over_Sampling:": "П/Д:",
+	"Tri_gger": "Триг",
+
+	"absolute_threshold": "Абс порог",
+	
+	"act_ive": "AКТ",
+	"active": "Активно",
+	"actual_duration": "Действительная\nдлительность (с)",
+
+	"adsr": {
+		"adsr": "ADSR",
+		"ahdbssr": "AHDBSSR",
+		"attack": "Подъём",
+		"break": "Разрыв",
+		"convex": "Выпукл",
+		"curve": "Кривая",
+		"decay": "Спад",
+		"envelope": "Огибающая",
+		"hold": "Удержание",
+		"release": "Затухание",
+		"shape": "Форма",
+		"slope": "Наклон",
+		"sustain": "Поддержка",
+		"time": "Время"
+	},
+	
+	"all_plugins": "Все плагины",
+
+	"alr": "АРУ",
+    "alr_": "Авто регуляция уровней",
+
+	"amount": "Количество",
+	"amount:db": "Количество\n(дБ)",
+	"amount_stereo_link:db_pc": "Количество,\nСтереосвязь\n(дБ, %)",
+	"amplitude": "Амплитуда",
+
+	"asample": {
+		"fname": "{@file_name}",
+		"duration": "{@length_cut%.1f} / {@length%.1f}",
+		"head": "{@head_cut%.1f} / {@fade_in%.1f}",
+		"tail": "{@tail_cut%.1f} / {@fade_out%.1f}",
+		"misc": ""
+	},
+
+	"att_ack": "Атак",
+	"attack": "Атака",
+	"attack:db_ms": "Атака\n(дБ, мс)",
+	"attack_release:ms_ms": "Атака,\nВыключение\n(мс, мс)",
+
+	"auto": "Авто",
+	"automatic_extension": "Автоматическое расширение",
+
+	"balance": "Баланс",
+
+	"band": "Полоса",
+	"band_id": "Полоса {@id}",
+	
+	"bands": {
+		"frequency_hi": "Частоты Вск Hi",
+		"frequency_hi_e": "Частоты Вск-Д",
+		"frequency_low": "Частоты Нзк",
+		"frequency_mid": "Частоты Срд",
+		"hi": "Вск",
+		"hi_e": "Вск-Д",
+		"low": "Нзк",
+		"mid": "Срд"
+	},
+	"band_hue": "Полоса, Тон",
+	
+	"blend": "Смесь",
+
+	"bool": {
+		"off": "выкл",
+		"on": "вкл"
+	},
+
+	"boost": "Повышение",
+	"boost_": "Повыш",
+	"bookmark_list": "Закладки",
+	
+	"bottom": "Нижний",
+
+	"bypass": "Обход",
+
+	"capture": "Захват",
+	"capture:": "Захват:",
+	"capsule": "Капсюль",
+	
+    "chain_output": "Выход аудиоцепи",
+    
+	"chan": {
+		":db": "(дБ)",
+		"Ch_1": "Кан1",
+		"Ch_2": "Кан2",
+		"Ch_3": "Кан3",
+		"Ch_4": "Кан4",
+		"Ext_ernal": "Внеш",
+		"H_old": "У",
+		"I_nspect": "И",
+		"L_eft": "Л",
+		"L_eft:": "Л:",
+		"M_id": "Ц",
+		"M_id:": "Ц:",
+		"M_ute": "Г",
+		"OFF": "ВЫКЛ",
+		"ON": "ВКЛ",
+		"ON_num_id": "ВКЛ {@id}",
+		"P_hase": "Ф",
+		"R_ight": "П",
+		"R_ight:": "П:",
+		"S_ide": "С",
+		"S_ide:": "С:",
+		"S_olo": "С",
+		"active_num_id": "Активный №{@id}",
+		"active_num_id_L_eft": "Активный №{@id} Л",
+		"active_num_id_M_id": "Активный №{@id} Ц",
+		"active_num_id_R_ight": "Активный №{@id} П",
+		"active_num_id_S_ide": "Активный №{@id} С",
+		"all": "Все",
+		"balance": "Баланс",
+		"balance:pc": "Баланс\n(%)",
+		"channel_n": "Канал {@id}",
+		"correlation": "Корреляция",
+		"external_sc": "Внешняя",
+		"external_sc_left": "Внешняя слева",
+		"external_sc_mid": "Вшешняя центр",
+		"external_sc_right": "Вшеншняя справа",
+		"external_sc_side": "Внешняя сторона",
+		"freeze": "Удерж",
+		"frz": "Уд",
+		"hold": "Удерж",
+		"hue": "Тон",
+		"id": "{@id}",
+		"id_L_eft": "{@id} Л",
+		"id_M_id": "{@id} Ц",
+		"id_R_ight": "{@id} П",
+		"id_S_ide": "{@id} С",
+		"in": "Вх",
+		"input": "Вход",
+		"inspect": "Инспекция",
+		"left": "Левый",
+		"left_on": "Левый вкл",		
+		"link": "Линк",
+		"lr_link": "Связь Л/П",
+		"mid": "Центр",
+		"mid_on": "Центр вкл",
+		"mid_side": "Центр/Сторона",
+		"middle": "Центр",
+		"ms_link": "Связь Ц/С",
+		"mute": "Глуш",
+		"none": "Ничего",
+		"num_id": "№{@id}",
+		"num_id_L_eft": "№{@id} Л",
+		"num_id_M_id": "№{@id} Ц",
+		"num_id_R_ight": "№{@id} П",
+		"num_id_S_ide": "№{@id} С",
+		"off": "Выкл",
+		"on": "Вкл",
+		"out": "Вых",
+		"output": "Выход",
+		"phase": "Фаза",
+		"phase_shift": "Фазовый сдвиг",
+		"pitch": "Высота",
+		"pitch_left": "Высота левого",
+		"pitch_mid": "Высота центра",
+		"pitch_right": "Высота правого",
+		"pitch_side": "Высота стороны",
+		"rand_id": "В случайном порядке #{@id}",
+		"reference": "Референс",
+		"return": "Возврат",
+		"right": "Правый",
+		"right_on": "Правый вкл",
+		"send": "Посыл",
+		"shift": "Смещ",
+		"side": "Сторона",
+		"side_on": "Сторона вкл",
+		"sm_apply": "С/М Применить",
+		"solo": "Соло",
+		"solo_hold": "Соло/Удерж",
+		"volume": "Громкость"
+	},
+	"channel": "Канал",
+	"channels": "Каналы",
+
+	"clear": "Очистить",
+	"clp": "КЛП",
+	"comment": "Комментарий",
+    "compression_curve": "Кривая копрессии",
+	"contour:": "Контур:",
+	"controls": "Управление",
+	"ctl": "Упр",
+
+	"click_or_drag_to_load": "Клик или притащить файл",
+
+	"coarse_ir_duration": "Приблизительная\nдлительность ИО (с)",
+	"coarse_ir_duration_sline": "Приблизительная длительность ИО (s)",
+	"coarse_duration": "Приблизительная\nдлительность",
+	
+	"crossover": "Кроссовер",
+
+	"curve": "Кривая",
+
+	"dc_offset": "Смещение",
+	"dc_reference": "Точка отсчёта",
+
+	"decramp": "Разжатие",
+	"delay": "Задержка",
+	"delay:ms": "Задержка (мс)",
+	"delay_line_processing": "Обработка линии задержки",
+	"delay_time_formula": "Формула времени задержки",
+	"delay_reference": "Ссылка на задержку",
+	
+	"depth":
+	{
+		"": "Глубина",
+		"min": "Мин глубина"
+	},
+
+	"direct_out": "Прямой вых",
+	"direct_output": "Прямой выход",
+	"direct_output_": "Прямой выход:",
+	"distance": "Дистанция",
+	"distance:cm": "Дистанция (см)",
+	"dither": "Дизеринг",
+	"dither:": "Дизеринг:",
+	"dithering": "Дизеринг",
+	
+	"downward": "Понижающий",
+
+	"dynamic_profiles": "Динамичные профили",
+	"dynamics": "Динамика",
+
+	"enable": "Включить",
+
+	"energy_decay_linear_correlation": "Линейная корреляция\nзатухания энергии",
+	"energy_decay_linear_correlation_sline": "Линейная корреляция затухания энергии",
+
+	"equalizer": "Эквалайзер",
+	"equalizer:db": "Эквалайзер (дБ)",
+
+	"export": "Экспорт",
+	
+	"favourites": "Избранное",
+
+	"feedback": "Обратная связь",
+	"feed_gain": "Глубина ОС",
+
+	"fft": {
+		"envelope": "Огибающая",
+		"fft": "БПФ",
+		"fft:": "БПФ:",
+		"fft_in": "БПФ Вх",	
+		"fft_link": "БПФ Линк",
+		"fft_out": "БПФ Вых",
+		"fft_sc": "БПВ БЦ",
+		"frame": "Кадр БПФ",
+		"tolerance": "Точность",
+		"window": "Окно"
+	},
+
+	"file": "Файл",
+	"file_display": {
+		"custom": "{@title} *",
+		"system": "{@title} /",
+		"user": "{@title} ~"
+	},
+	"file_list": "Список файлов",
+	"file_name": "Имя файла",
+	"file_preview": {
+		"": "Свойства файла",
+		"audio_channels": "Аудиодорожек:",
+		"auto_play": "Автозапуск",
+		"duration": "Длительность:",
+		"n_a": "--",
+		"sample_format":
+		{
+			"": "Формат семпла:",
+			"f32": "32-bit float",
+			"f64": "64-bit float",
+			"s16": "16-bit sint",
+			"s24": "24-bit sint",
+			"s32": "32-bit sint",
+			"s8": "8-bit sint",
+			"u16": "16-bit uint",
+			"u24": "24-bit uint",
+			"u32": "32-bit uint",
+			"u8": "8-bit uint",
+			"unknown": "неизвестный"
+		},
+		"sample_rate": "Дискретизация:",
+		"time_hms": "{@hour}:{@min^0%2d}:{@sec^0%2d}.{@msec^0%3d} ч",
+		"time_ms": "{@min}:{@sec^0%2d}.{@msec^0%3d} м",
+		"time_s": "{@sec}.{@msec^0%3d} с"
+	},
+	"filter": { 
+		"": "Фильтр",
+		"controls": "Управление фильтром",
+		"gain": "Усиление фильтра",	
+		"width": "Ширина фильтра"
+	},
+	"filters": "Фильтры",
+
+	"flt": {
+		"10k": "10к",
+		"1k": "1к",
+		"2_2k": "2.2к",
+		"4_7k": "4.7к",
+		"EQ_ualizer": "ЭКВ",
+		"H_ighC_ut": "ФНЧ",
+		"HCF": "ФНЧ",
+		"HPF": "ФВЧ",
+		"L_owC_ut": "ФВЧ",
+		"LCF": "ФВЧ",
+		"LPF": "ФНЧ",
+		"bass": "Басы",
+		"flatten": "Сжатие",
+		"high_cut": "ВЧ срез",
+		"hpf:dbo": "ФВЧ (дБ/окт)",		
+		"hpf_lpf:dbo": "ФВЧ | ФНЧ\n(дБ/окт)",		
+		"low_cut": "НЧ срез",
+		"lpf:dbo": "ФНЧ (дБ/окт)",
+		"middle": "Середина",
+		"presence": "Присутствие",
+		"show_": "Показ",
+		"subs": "Суббас",
+		"treble": "Верха",
+		"x_k": "{@value}к"
+	},
+
+	"freq": "Част",
+	"frequency": {
+		"": "Частота",
+		"max": "Макс",
+		"min": "Мин"
+	},
+	"freq_gain": "Част, Усил",
+	"freq_gain:hz_db": "Част, Усил\n(Гц, дБ)",
+	
+	"function": "Функция",
+
+	"gain": "Усиление",
+	"gain_": "Усил",
+	"gain_matching": "Автоусиление",
+	"gain:db": "Усиление\n(дБ)",
+
+	"global_settings": "Общие настройки",
+
+	"graphs": {
+		"clipping": "КЛИППИНГ",
+		"compression": "КОМПРЕССИЯ",
+		"correlation": "ГРАФИК КОРРЕЛЯЦИИ",
+		"curve": "КРИВАЯ",
+		"delay_graph": "ГРАФИК ЗАДЕРЖЕК",
+		"delay_line": "ЛИНИЯ ЗАДЕРЖКИ",
+		"expansion": "РАСШИРЕНИЕ",
+		"frequency": "ЧАСТОТНЫЙ ГРАФИК",
+		"gating": "ГЕЙТИРОВАНИЕ",
+		"left_channel": "ЛЕВЫЙ КАНАЛ",
+		"LFO": "НЧО ГРАФИК",
+		"LFO_1": "НЧО 1 ГРАФИК",		
+		"LFO_2": "НЧО 2 ГРАФИК",
+		"oscillator_waveform": "ФОРМА ВОЛНЫ ГЕНЕРАТОРА",
+		"oscilloscope": "ГРАФИК ОСЦИЛЛОСКОПА",
+		"overdrive_protection": "ЗАЩИТА ОТ ПЕРЕГРУЗКИ",
+		"right_channel": "ПРАВЫЙ КАНАЛ",
+		"spectrum": "СПЕКТРАЛЬНЫЙ ГРАФИК",
+		"time": "ВРЕМЕННОЙ ГРАФИК",
+		"trigger": "ГРАФИК ТРИГГЕРА"
+	},
+	"group": "Группа",
+
+	"header": {
+		"about": "ИНФО",
+		"load": "ЗАГР",
+		"menu": "МЕНЮ",
+		"reset": "СБРОС",
+		"save": "СОХР"
+	},
+
+	"history": "История",
+
+	"hold": "Удерживать",
+	"host_bpm": "УВМ хоста",
+	"hold_release:ms_ms": "Удержание,\nОтпускание\n(мс, мс)",
+
+	"hysteresis": "Гистерезис",
+
+	"hz_db": "(Гц, дБ)",
+
+	"input": "Вход",
+	"input_level:db": "Входной уровень (дБ)",
+	"input:db": "Вход (дБ)",
+	"instrument": "Инструмент",
+	"instrument_num": "№ инструмента",
+	"invert": "Инверсия",
+
+	"ir_equalizer": "Эквализация ИО",
+
+	"knee": "Колено",
+	"knee_:db": "Колено\n(дБ)",
+
+	"latency": "Задержка",
+	"latency:ms": "Задержка (мс)",
+	"launch": "Пуск",
+	"left": "Лево",
+	"lfo": {
+		"": "НЧО",
+		"1": "НЧО 1",
+		"2": "НЧО 2",
+		"crossfade": "Кроссфейд",
+		"difference": "Разница",
+		"phase": "Фаза",
+		"phase_range": "Фазовый диапазон",
+		"rate": "Частота",
+		"type": "Тип",
+		"voices": "Голоса"
+	},
+	"limiter_bands": "Полосы лимитера",
+	"limiting": {
+		"bottom": "Снизу",
+		"top": "Сверху"
+	},
+	"line_size": "Размер линии",
+	"link": {
+		"": "Связь",
+		"other": {
+			"connected": "== {@value}",
+			"not_connected": "Связь..."
+		},
+		"return": {
+			"connected": "{@value} ->",
+			"not_connected": "Связь..."
+		},
+		"send": {
+			"connected": "-> {@value}",
+			"not_connected": "Послать..."
+		}
+	},
+	"listen": "Слушать",
+	"location": "Местоположение",
+	"log_dots": "Лог точки",
+	"log_scale": "Лог масштаб",
+
+	"lookahead": "Предсказание",
+	"lookahead_duck:ms_ms": "Предсказ,\nЗазор\n(мс, мс)",
+	
+	"loudness": "Громкость",
+	"loudness_L": "Д",
+	"loudness_S": "К",
+	
+	"lufs_limit": "LUFS Лимит",
+
+	"makeup": "Коррекция",
+	"makeup_:db": "Коррекция\n(дБ)",
+
+	"material": {
+		"absorption": "Поглощение",
+		"diffusion": "Рассеяние",
+		"dispersion": "Дисперсия",
+		"in_to_out": "Внутрь",
+		"link": "Связь",
+		"material_preset": "Готовый материал",
+		"material_preset:": "Готовый материал:",
+		"out_to_in": "Наружу",
+		"physical_properties": "Физические свойства",
+		"physical_properties:": "Физические свойства:",
+		"sound_speed": "Скорость звука",
+		"transparency": "Проницаемость"
+	},
+	"max_delay": "Макс задержка",
+	"max_delay:s": "Макс задержка (с)",
+	"max_gain": "Макс усил",
+	"max_latency": "Макс задержка",
+	"max_time": "Макс время",
+
+	"measure": "Измерить",
+	"memory:mb": "Память (МБ)",
+	"metering": {
+		"ballistics": "Баллистика",
+		"channel": "Канал",
+		"damping": "Затухание",
+		"display": "Показыать",
+		"drift": "Дрифт",
+		"fall": "Спад",
+		"fft_frequency": "Частота БПФ",
+		"fft_frequency:hz": "Частота БПФ (Гц)",
+		"frequency": "Частота",
+		"frequency:hz": "Частота (Гц)",
+		"frame": "Кадр",
+		"grow": "Рост",
+		"integration": "Интегрирование",
+		"level": "Уровень",
+		"level:db": "Уровень (дБ)",
+		"measure_line": "Измеритель",
+		"period": "Период",
+		"preamp": "Предусиление",
+		"reactivity": "Реактивность",
+		"selector": "Селектор",
+		"shift": "Смещение"
+	},
+
+	"mic_rophone_direction": "Напр микрофона",
+
+	"midi": {
+		":code": "(Код)",
+		"code": "Код",
+		"midi_num": "№ MIDI",
+		"midi_number": "Номер MIDI",
+		"note_off": "Нота выкл",
+		"note_on": "Нота вкл",
+		"velocity": "Сила"
+	},
+	"mix": "Микс",
+	"mix_gain": "Громкость",
+
+	"mode": "Режим",
+	"mode_slope": "Режим, Крутизна",
+	"mode:": "Режим:",
+	"model": "Модель",
+	"model:": "Модель:",
+	
+	"morph_time": "Превращение",
+
+	"ms_listen": "Слушать ЦС",
+
+	"mus": {
+		"note": "Нота",
+		"octave": "Октава",
+		"bpm": "УВМ",
+		"pitch": "Высота",
+		"tempo": "Темп",
+		"tone": "Тон"
+	},
+
+	"mute": "Глушение",
+	"muting": "Глушение",
+
+	"name": "Название",
+
+	"noise_floor": "Шумовой порог",
+	"noise_floor_left": "Шумовой порог левый",
+	"noise_floor_right": "Шумовой порог правый",
+
+	"normalize": "Нормализация",
+
+	"obj": {
+		"disabled": "Отключен",
+		"enabled": "Включен",
+		"hue": "Тон",
+		"object": "Объект",
+		"object:": "Объект:"
+	},
+
+	"offset": "Смещение",
+	"offset:samp": "Смещение (отсч)",
+
+	"oscilloscope": {
+		"H_orizontal": "H",
+		"T_ime": "T",
+		"V_ertical": "V",
+		"division": "Деление",
+		"horizontal": "Горизонталь",
+		"max_dots": "Макс точек",
+		"mode": "Режим",
+		"oversampler_mode": "Оверсемплинг",
+		"position": "Позиция",
+		"sweep_type": "Ход луча",
+		"trigger_hold_time": "Время удерж",
+		"trigger_hysteresis": "Гистерезис",
+		"trigger_input": "Вход",
+		"trigger_level": "Уровень",
+		"trigger_mode": "Режим",
+		"trigger_reset": "Сброс",
+		"trigger_type": "Событие",
+		"vertical": "Вертикаль",
+		"xy_sweep": "XY Ход"
+	},
+
+	"output": "Выход",
+	"output:db": "Выход (дБ)",
+	"output_clipper": "Выходной клиппер",
+    "output_limiter": "Выходной лимитер",
+    "odp": "ЗОП",    
+    "odp_link": "ЗОП Связь",
+    "overlap": "Наложение",
+	"oversampling": "Передискретизация",
+	"oversampling:": "Передискретизация:",
+
+	"panning": "Панорама",
+	"panorama": "Панорама",
+	"panorama:pc": "Панорама (%)",
+	"paths": {
+		"user_hydrogen_kits": "Путь к пользовательским файлам Hydrogen:",
+		"user_hydrogen_kits_override": "Путь к файлам замещения файлов Hydrogen:"
+	},
+	"pause": "Пауза",
+	
+	"period": "Период",
+
+	"plug": {
+		"calibrator": "Калибратор",
+		"compressor": "Компрессор",
+		"dyna_processor": "Динамический процессор",
+		"expander": "Экспандер",
+		"gate": "Гейт",
+		"latency_detector": "Детектор задержки",
+		"limiter": "Лимитер",
+		"surge_filter": "Фильтр всплесков",
+		"trigger": "Триггер"
+	},
+
+	"postprocess": "Постобработка",
+
+	"preamp": "Предусиление",
+	"predelay": "П/задержка",
+	"premix": {
+		"": "Премикс",
+		"in_to_link": "Вх -> Связь",
+		"in_to_sc": "Вх -> БС",
+		"link_to_in": "Связь -> Вх",
+		"link_to_sc": "Связь -> БЦ",
+		"sc_to_in": "БЦ -> Вх",
+		"sc_to_link": "БЦ -> Связь"
+	},
+	
+	"presets": {
+		"add_to_favourites": "Добавить в избранное",
+		"category": {
+			"all": "Все",
+			"factory": "Фабричные",
+			"favourites": "Избранные",
+			"user": "Пользовательские"
+		},
+		"configuration": "Конфигурация",
+		"name": {
+			"mod": "* {@name}",
+			"normal": "{@name}",
+			"factory": "{@name} [Втроенный]",
+			"user": "{@name} [Пользовательский]",
+			"factory_mod": "* {@name} [Встроенный]",
+			"user_mod": "* {@name} [Пользовательский]"
+		},
+		"preset_name": "Название пресета"
+	},
+	
+	"processing": {
+		"post": "Пост",
+		"pre": "Пред"
+	},
+	"prof": {
+		"calibrating": "КАЛИБРОВКА",
+		"convolving": "СВЁРТКА",
+		"detecting_latency": "ОПРЕДЕЛЕНИЕ ЗАДЕРЖКИ",
+		"idle": "НЕАКТИВЕН",
+		"postprocessing": "ПОСТОБРАБОТКА",
+		"preprocessing": "ПРЕДОБРАБОТКА",
+		"profiler_state": "СОСТОЯНИЕ ПРОФИЛИРОВЩИКА:",
+		"rt_algorithm": "Алгоритм ВР",
+		"recording": "ЗАПИСЬ",
+		"saving": "СОХРАНЕНИЕ",
+		"waiting": "ОЖИДАНИЕ"
+	},
+	"profiles": {
+		"capture_profile": "Capture profile",
+		"input_profile": "Input profile"
+	},
+	"progress": "Прогресс",
+	
+	"pump": "Нкчк",
+	"pumping": "Накачка",
+
+	"q": "Добр",
+	"q_hue": "Добр, Тон",
+	"q_width": "Добр,\nШирина (окт)",
+	"quality": "Качество",
+
+	"rack": {
+		"acronym": "{@meta_plugin_acronym}",
+		"description": "{@meta_plugin_description}",
+		"left": "{@meta_pkg_brand}",
+		"name": "{@meta_plugin_name}",
+		"plugin_launcher": "Запуск плагина",
+		"right": "{@meta_plugin_acronym}",
+		"top": "{@meta_pkg_brand} {@meta_plugin_acronym}"
+	},
+
+	"ramp": "Сглаж",
+	"range": "Диапазон",
+	"range_id": "Граница {@id}",
+	"ranges": "Диапазоны",
+
+	"rating": "Рэйтинг",
+
+	"ratio": "Наклон",
+	"ratio_down": "Понижение",
+	"ratio_high": "Наклон верх",
+	"ratio_low": "Наклон низ",
+	"ratio_low_high": "Наклон низ,\nНаклон верх",
+	"ratio_knee:db": "Наклон,\nКолено (dB)",
+	"ratio_up": "Повышение",
+	
+	"reactivity": "Реактивность",
+	"ready": "Готово",
+
+	"reduction": "Понижение",
+
+	"reflections": "Отражения",
+
+	"relative_paths": "Относительные пути",
+	"rel_ease": "Выкл",
+	"release": "Выключение",
+	"release:db_ms": "Выключение\n(дБ, мс)",
+	"reset": "Сбросить",
+	
+	"resonance": "Резонанс", 
+	
+	"result": "Результат",
+
+	"reverberation_time:s": "Время\nреверберации (с)",
+	"reverberation_time:s_sline": "Время реверберации (с)",
+
+	"right": "Право",
+
+	"room_orientation:": "Ориентация комнаты:",
+
+	"samples": "Отсчёты",
+	"samples:samp": "Отсчёты (шт)",
+	"save": "Сохранить",
+	"save_": "Сохр",
+	"save_mode": "Режим сохранения",
+
+	"sc": {
+		"Ext_ernal": "Внеш",
+        "External_sidechain": "Внешняя БЦ",
+		"SC": "БЦ",
+		"ducking": "Зазор",
+		"listen": "Слушать",
+		"lookahead": "Предсказание",
+		"position": "Позиция",
+		"preamp": "Усиление",
+		"reactivity": "Реактивность",
+		"source": "Источник",
+		"sc_mode": "Режим БЦ",
+		"sc_preamp": "Предусил БЦ",
+		"type": "Тип"
+	},
+
+	"sc_boost": "Усиление БЦ",
+	"sc_boost:": "Усиление БЦ:",
+
+	"sc_preamp_makeup:db_db": "Усиление БЦ,\nКорректировка\n(дБ, дБ)",
+
+	"sel_time": "Выбр время",
+	"setup": "Настройка",
+	"search": "Поиск",
+	"sedit": {
+		"active": "Активен",
+		"compensate": "Компенсация",
+		"disabled": "Выключен",
+		"enabled": "Включён",
+		"fade_in": "Нараст",
+		"fade_out": "Затух",
+		"head_cut": "Нач срез",
+		"listen": "Слушать",
+		"loop": "Петля",
+		"loop_nth": "Петля {@id}",
+		"loop_end": "Конец",
+		"loop_fade": "Длина фейда",
+		"loop_start": "Начало",
+		"makeup": "Громк",
+		"pitch": "Высота",
+		"pitch_chunk": "Размер блока",
+		"pitch_fade": "Длина фейда",
+		"predelay": "Задерж",
+		"reverse": "Реверс",
+		"sample": "Сэмпл",
+		"sample_num": "№ сэмпла",
+		"sample_nth": "Сэмпл {@id}",
+		"stop": "Стоп",
+		"stretch": "Растяжение",
+		"stretch_chunk": "Размер блока",
+		"stretch_end": "Конец",
+		"stretch_fade": "Длина затухания",
+		"stretch_fade_type": "Тип затухания",
+		"stretch_start": "Start",
+		"tail_cut": "Кон срез"
+	},
+	"separate": "Разделение",
+	"settings": "Настройки",
+
+	"side_direction": "Напр бокового",
+	"sidechain": "Боковая цепь",
+
+	"signal": {
+		"": "Сигнал",
+		"M_iddle": "Ц",
+		"P_hase": "Ф",
+		"S_ide": "К",
+		"amplitude": "Амплитуда",
+		"clip": "Срез",
+		"clipping": "Клиппинг",
+		"curr_ent": "Тек",
+		"dc_compensate": "Комп. смещения",
+		"dc_offset": "Смещение",
+		"drive": "Драйв",
+		"dry": "Необр",
+		"dry:db": "Необр\n(дБ)",
+		"dry_pan": "Пан необр",
+		"drywet": "Необр/Обр",
+		"duty_ratio": "Коэф заполн",
+		"envelope": "Огибающая",
+		"fade_in": "Нарастание",
+		"fade_out": "Затухание",
+		"fall": "Спад",
+		"in_lr": "Вх Л/П",
+		"input": "Вход",
+		"input_A": "Вход А",
+		"input_B": "Вход Б",
+		"invert": "Инвертировать",
+		"match": "Соответствие",
+		"max": "Макс",
+		"min": "Мин",
+		"mix": "Микс",
+		"mono": "Моно",
+		"negative": "Отрицательный",
+		"negative_width": "Отриц ширина",
+		"out_lr": "Вых Л/П",
+		"pan": "Панорама",
+		"pan_l": "Пан лев",
+		"pan_left": "Пан лев",
+		"pan_r": "Пан прав",
+		"pan_right": "Пан прав",
+		"peak": "Пик",
+		"phase": "Фаза",
+		"phase_invert": "Инверсия фазы",
+		"positive": "Положительный",
+		"positive_width": "Полож ширина",
+		"profile": "Профиль",
+		"raise": "Подъём",
+		"reference": "Калибровка",
+		"relative": "Относительный",
+		"rms": "СКЗ",
+		"stereo": "Стерео",
+		"width": "Ширина",
+		"wet": "Обраб",
+		"wet:db": "Обраб\n(дБ)"
+	},
+
+	"slope": "Крутизна",
+	
+	"smooth": "Гладкость",
+
+	"source": "Источник",
+	"source:": "Источник:",
+
+	"specials": {
+		"idx": "{@id}",
+		"idx:": "{@id}:",
+		"num": "№"
+	},
+	"spectrogram": "Спектрограмма",
+	"spread": "Разброс",
+
+	"src": {
+		"disabled": "Выключен",
+		"enabled": "Включен"
+	},
+
+	"static_profiles": "Статичные профили",
+	"status": "Статус",
+
+	"stereo_link": "Стереосвязь",	
+	"stereo_split": "Раздельное стерео",
+	"stop": "Стоп",
+	"stretch": "Растяжение",
+	
+	"surge": "Всплеск",
+
+	"sync": "Синхр",
+
+	"temperature": "Температура",
+	"tempo": "Темп",
+	"tempo_based_delay": "Задержка по темпу",
+	"tempo_based_feedback_delay": "Задержка по темпу обратной связи",
+
+	"thr_eshold": "Пор",
+	"thr_eshold_num_id": "Пор №{@id}",
+	"threads": "Потоков",
+	"thresh": {
+		"down": "Пониж.\nпорог",
+		"min": "Нижний\nпорог",
+		"up": "Повыш.\nпорог"
+	},
+	"threshold": "Порог",
+	"threshold:db": "Порог\n(дБ)",
+	"thresh_gain:db_db": "Порог, Усил\n(дБ, дБ)",
+	"thresh_old": "Порог",
+	"thresh_old:db": "Порог\n(дБ)",
+	"thresh_zone:db_db": "Порог,\nЗона\n(дБ, дБ)",
+
+	"time": "Время",
+	"time_:ms": "Время (мс)",
+	"time_drifting": "Плав по темпу",
+	"time:ms": "Время\n(мс)",
+
+	"type": "Тип",
+
+	"units": {
+		":db": "(дБ)",
+		":hz": "(Гц)",
+		":lkfs": "(LKFS)",
+		":lufs": "(LUFS)",
+		":lu": "(LU)",
+		":ms": "(мс)",
+		":pc": "(%)",
+		"db": "дБ",
+		"hz": "Гц",
+		"lkfs": "LKFS",
+		"lufs": "LUFS",
+		"lu": "LU",
+		"ms": "мс",
+		"pc": "%",
+		"centimeters": "Сантиметры",
+		"meters": "Метры",
+		"millimeters": "Миллиметры",
+		"samples": "Отсчёты"
+	},
+	"upward": "Повышающий",
+	"user_friendly_values": "Дружелюбные пользователю значения",
+	"value": "Значение",
+	"values": {
+		"best": "Лучшее",
+		"desc_label": "{@name}",
+		"desc_multi_line": "{@name}\n({@unit})",
+		"desc_single_line": "{@name} ({@unit})",
+		"desc_unit": "({@unit})",
+		"fmt_multi_line": "{@value}\n{@unit}",
+		"fmt_single_line": "{@value} {@unit}",
+		"fmt_value": "{@value}",
+		"selected": "Выбранное",
+		"worst": "Худшее",		
+		"x_db": "{@value} дБ",
+		"x_hz": "{@value} Гц",
+		"x_k": "{@value}к",
+		"x_khz": "{@value} кГц",
+		"x_pc": "{@value%.2f} %"
+	},
+	"volume_list": "Томы",
+
+	"warning": {
+		"all_values_good": "Все параметры в допустимых пределах.",
+		"delay_out_of_range": "Внимание! Задержка вне допустимого диапазона.",
+		"feedback_out_of_range": "Внимание! Задержка обратной связи\nвне допустимого дипазона.",
+		"loop_in_delay": "Внимание! Циклическая ссылка в цепочке\nссылок на линии задержки."
+	},
+	
+	"weighting": "Взвешивание",
+
+	"workspace": "Рабочая область",
+
+	"X_Y_EXT": "X | Y | ВНЕШ",
+
+	"zone": "Зона",
+	"zoom": "Масш"
+}

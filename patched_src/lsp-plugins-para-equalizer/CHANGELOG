@@ -1,0 +1,135 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.36 ===
+* Frequency knob now also is affected by note quantization switch.
+* Updated build scripts and dependencies.
+
+=== 1.0.35 ===
+* Better parsing APO filter files.
+* Added support of bilinear transform filters decramping.
+* Fixed artifacts at the edges of the equalization curve.
+* Updated build scripts and dependencies.
+
+=== 1.0.34 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.33 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.32 ===
+* Added display of piano keyboard layout on graph.
+* Added frequency quantization function to match the exact frequency of the note.
+* Updated build scripts and dependencies.
+
+=== 1.0.31 ===
+* Added left/right and mid/side linking in the UI.
+* Updated build scripts and dependencies.
+
+=== 1.0.30 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.29 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.28 ===
+* Fixed imprecise spectrum graph when rapidly changing the frequency of filter.
+* Updated build scripts and dependencies.
+
+=== 1.0.27 ===
+* Fixed compilation on modern compilers.
+* Updated build scripts and dependencies.
+
+=== 1.0.26 ===
+* Added send/return options to communicate with another equalizers/plugins.
+* Updated build scripts and dependencies.
+* Changed the frequencies that are responsible for enabling filter types when double-clicking on the graph
+
+=== 1.0.25 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.24 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.23 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.22 ===
+* Fixed bug in smoothing mode when parameters of filters change.
+* Implemented Bypass::process_wet method for better performance.
+* Updated build scripts and dependencies.
+
+=== 1.0.21 ===
+* Implemented separate input and output signal spectrum analysis.
+* Implemented automatic scale of spectrum graph switch.
+* Updated zoom fader.
+* Added support of variable size of filter dots.
+* Implemented x8 versions.
+* Updated build scripts and dependencies.
+
+=== 1.0.20 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.19 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.18 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.17 ===
+* Fixed frequency inspection bug for LeftRight and MidSide versions of plugin.
+* Added Bandpass, Ladder-pass and Ladder-rej filters.
+* Updated build scripts and dependencies.
+
+=== 1.0.16 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.15 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.14 ===
+* Fixed regression: non-working solo button after 1.2.6 release.
+* Added display of filter number, filer channel and filter type near to the
+  frequency and note.
+* Added possibility to switch filter between Mid/Side and Left/Right channels.
+* Updated build scripts and dependencies.
+
+=== 1.0.13 ===
+* Equalizer is now smoothly operating with frequency/gain/q factor for each
+  mode: FIR, IIR, FFT, SPM.
+* Added popup menu for more precise control over the equalizer dot on the graph.
+* Added frequency and note displaying (with detune in cents) over the currently
+  configured filter. 
+* Implemented automatic and manual inspect mode for filters.
+* Updated build scripts and dependencies.
+
+=== 1.0.12 ===
+* Fixed invalid version number in metadata.
+
+=== 1.0.11 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.10 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.9 ===
+* Added built-in presets for some music genres (contributed by Largos @ linuxmusicians).
+* Added possibility to add several filters by performing mouse double click on the graph area.
+* Updated build scripts and dependencies.
+
+=== 1.0.8 ===
+* Updated build scripts and dependencies.
+
+=== 1.0.7 ===
+* Added german translations (contributed by Johannes Guenther).
+* Updated build scripts and dependencies.
+
+=== 1.0.6 ===
+* Updated plugin metadata (contributed by Dennis Braun).
+* Updated dependencies and build scripts.
+* Updated build scripts and dependencies.
+
+=== 1.0.5 ===
+* Initial release.
+

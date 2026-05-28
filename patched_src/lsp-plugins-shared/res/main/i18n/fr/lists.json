@@ -1,0 +1,220 @@
+{
+	"bool": {
+		"off": "off",
+		"on": "on"
+	},
+
+	"dither": {
+        "none": "Aucun",
+        "bits": {
+	        "11": "11bit",
+	        "12": "12bit",
+	        "15": "15bit",
+	        "16": "16bit",
+	        "23": "23bit",
+	        "24": "24bit",
+	        "7": "7bit",
+	        "8": "8bit"
+        }
+	},
+	
+	"eq": {
+		"flt": {
+			"allpass": "Passe-tout",
+			"allpass2": "Passe-tout2",
+			"bandpass": "Passe-bande",
+			"bell": "Cloche",
+			"envelope": "Envelope",
+			"hipass": "Passe-haut",
+			"hishelf": "Hi-shelf",
+			"ladpass": "Ladder-pass",
+			"ladrej": "Ladder-rej",
+			"lopass": "Passe-bas",
+			"loshelf": "Lo-shelf",
+			"notch": "Peigne",
+			"off": "Off",
+			"resonance": "Résonance"
+		},
+		"mode": {
+			"rlc_bt": "RLC (BT)",
+			"rlc_mt": "RLC (MT)",
+			"bwc_bt": "BWC (BT)",
+			"bwc_mt": "BWC (MT)",
+			"lrx_bt": "LRX (BT)",
+			"lrx_mt": "LRX (MT)",
+			"apo_dr": "APO (DR)"
+		},
+		"pos": {
+		    "post_eq": "Post-eq",
+			"pre_eq": "Pré-eq"
+		},
+		"slope": {
+			"6dbo": "6 dB/oct",
+			"12dbo": "12 dB/oct",
+			"18dbo": "18 dB/oct",
+			"24dbo": "24 dB/oct",
+			"30dbo": "30 dB/oct",
+			"36dbo": "36 dB/oct",
+			"off": "Off",
+			"x1": "x1",
+			"x2": "x2",
+			"x3": "x3",
+			"x4": "x4"
+		},
+		"type": {
+			"fir": "FIR",
+			"fft": "FFT",
+			"iir": "IIR"
+		}
+	},
+	
+	"fft": {
+		"env": {
+			"blue": "Bruit bleu",
+			"brown": "Bruit brun",
+			"falloff_4_5db": "chute de 4,5 dB/oct",
+			"pink": "Bruit rose",
+			"raise_4_5db": "augmentation 4,5 dB/oct",
+			"violet": "Bruit violet",
+			"white": "Bruit blanc"
+		},
+		"wnd": {
+			"bartlett_fejer": "Bartlett-Fejer",
+			"bartlett_hann": "Bartlett-Hann",
+			"blackman": "Blackman",
+			"blackman_harris": "Blackman-Harris",
+			"blackman_nuttall": "Blackman-Nuttall",
+			"cosine": "Cosinus",
+			"cubic": "Spline d'Hermite cubique",
+			"flat_top": "Plateau",
+			"gauss": "Gaussien",
+			"hamming": "Hamming",
+			"hann": "Hann",
+			"hann_poisson": "Hann-Poisson",
+			"lanczos": "Lanczos",
+			"nuttall": "Nuttall",
+			"parzen": "Parzen",
+			"poisson": "Poisson",
+			"rectangular": "Rectangulaire",
+			"sqr_cosine": "Cosinus carré",
+			"triangular": "Triangulaire",
+			"tukey": "Tukey",
+			"welch": "Welch"
+		}
+	},
+	
+	"file": {
+		"f1": "Fichier 1",
+		"f1l": "Fichier 1 gauche",
+		"f1r": "Fichier 1 droite",
+		"f2": "Fichier 2",
+		"f2l": "Fichier 2 gauche",
+		"f2r": "Fichier 2 droite",
+		"f3": "Fichier 3",
+		"f3l": "Fichier 3 gauche",
+		"f3r": "Fichier 3 droite",
+		"f4": "Fichier 4",
+		"f4l": "Fichier 4 gauche",
+		"f4r": "Fichier 4 droite",
+		
+		"left": "Gauche",
+		"none": "Aucun",
+		"right": "Droite",
+		
+		"t1": "Piste 1",
+		"t2": "Piste 2",
+		"t3": "Piste 3",
+		"t4": "Piste 4",
+		"t5": "Piste 5",
+		"t6": "Piste 6",
+		"t7": "Piste 7",
+		"t8": "Piste 8"
+	},
+	
+	"metering": {
+		"fft": {
+			"off": "Off",
+			"post_eq": "Post-eq",
+			"pre_eq": "Pré-eq"
+		}
+	},
+	
+	"multiband": {
+		"classic": "Classique",
+		"modern": "Moderne"
+	},
+	
+	"oversampler": {
+		"full": {
+			"2x16bit": "Complet x2/16 bit",
+			"2x24bit": "Complet x2/24 bit",
+			"3x16bit": "Complet x3/16 bit",
+			"3x24bit": "Complet x3/24 bit",
+			"4x16bit": "Complet x4/16 bit",
+			"4x24bit": "Complet x4/24 bit",
+			"6x16bit": "Complet x6/16 bit",
+			"6x24bit": "Complet x6/24 bit",
+			"8x16bit": "Complet x8/16 bit",
+			"8x24bit": "Complet x8/24 bit"
+		},
+		"half": {
+			"2x16bit": "Moitié x2/16 bit",
+			"2x24bit": "Moitié x2/24 bit",
+			"3x16bit": "Moitié x3/16 bit",
+			"3x24bit": "Moitié x3/24 bit",
+			"4x16bit": "Moitié x4/16 bit",
+			"4x24bit": "Moitié x4/24 bit",
+			"6x16bit": "Moitié x6/16 bit",
+			"6x24bit": "Moitié x6/24 bit",
+			"8x16bit": "Moitié x8/16 bit",
+			"8x24bit": "Moitié x8/24 bit"
+		},
+		"normal": {
+			"2x16bit": "x2/16 bit",
+			"2x24bit": "x2/24 bit",
+			"3x16bit": "x3/16 bit",
+			"3x24bit": "x3/24 bit",
+			"4x16bit": "x4/16 bit",
+			"4x24bit": "x4/24 bit",
+			"6x16bit": "x6/16 bit",
+			"6x24bit": "x6/24 bit",
+			"8x16bit": "x8/16 bit",
+			"8x24bit": "x8/24 bit",
+			
+			"x2": "x2",
+			"x3": "x3",
+			"x4": "x4",
+			"x6": "x6",
+			"x8": "x8"
+		},
+		"none": "Aucun"
+	},
+	
+	"rendering": {
+		"glx_opengl_v2": "OpenGL 2.0 (GLX)"
+	},
+	
+	"sidechain": {
+		"boost": {
+			"brown_bt": "BT brun",
+			"brown_mt": "MT brun",
+			"none": "Aucun",
+			"pink_bt": "BT rose",
+			"pink_mt": "MT rose"
+		},
+		"external": "Externe",
+		"feed_back": "Retour",
+		"feed_forward": "Injection",
+		"internal": "Interne",
+		"left": "Gauche",
+		"lpf": "LPF",
+		"max": "Max",
+		"middle": "Milieu",
+		"min": "Min",
+		"peak": "Pic",
+		"right": "Droite",
+		"rms": "RMS",
+		"side": "Côté",
+		"sma": "SMA"
+	}
+}

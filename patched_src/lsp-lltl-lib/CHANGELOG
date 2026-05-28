@@ -1,0 +1,185 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.30 ===
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Implemented lltl::shbuffer container.
+* Implemented lltl::ddeque container.
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Added lltl::hash_index container.
+* Some improvements around lltl::state container primitive.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Updated container interfaces: added const iterators.
+
+=== 1.0.26 ===
+* Added MacOS CI builds.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Added definition of MacOS dependencies in build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Updated lltl::state: added pending() method.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Implemented lltl::state for safe state transfer between threads.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Using inplace new from common library.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Implemented lltl::ptrset collection for unordered pointer storage.
+* Implemented raw_parray::qpremove method.
+* Implemented raw_darray::qremove and raw_darray::qpremove methods.
+* Added get() method to lltl::iterator.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Fixed several issues reported by PVS Studio static analyzer.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Implemented the lltl::iterator class free of dynamic allocations.
+* Implemented iterators for lltl::parray, lltl::darray, lltl::phashset, lltl::pphash.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Added possibility to implicitly specify data interfaces in constructors
+  for lltl::pphash and lltl::phashset.
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Added test build for Windows using MSYS2.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Updated default data copy specification for the generic data type.
+* Added Clang build for the CI.
+
+=== 1.0.7 ===
+* Updated build scripts.
+
+=== 1.0.6 ===
+* Updated build scripts.
+
+=== 1.0.5 ===
+* Several fixes in unit tests.
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Updated improper implementation of several const-methods for the lltl::parray
+  collection.
+* Added pphash::key method to obtain constant pointer for the allocated key.
+* Updated build scripts.
+
+=== 1.0.3 ===
+* Added support of C++ 11 standard.
+* Fixed compilation for Windows.
+* Updated dependencies.
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Updated build scripts.
+
+=== 1.0.1 ===
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Updated build scripts.
+* Updated signature of pphash::keys, pphash::values and pphash::items methods
+  to const.
+
+=== 0.5.7 ===
+* Disabled copy constructor for bitset.
+* Updated build system.
+
+=== 0.5.6 ===
+* Updated sort interface functions for darray and parray.
+* Updated build system.
+
+=== 0.5.5 ===
+* Better support of <stdlib.h> qsort_r() calls for different platforms.
+
+=== 0.5.4 ===
+* Added set_n to lltl::parray and lltl::darray with index specification.
+* Added qsort() methods for lltl::parray and lltl::darray.
+
+=== 0.5.3 ===
+* Added lltl::bitset collection with basic methods for storing bit flags.
+* Added lltl::phashset collection for quick managing of hash sets of objects.
+* Added lltl::ptr_hash_func and lltl::ptr_cmp_func functions for managing
+  object pointers which are considered to be unique for each object.
+* Added contains() method to lltl::parray and lltl::darray collections.
+* Added lltl::iterator class for work with iterators.
+* Renamed copy function reference to clone for lltl::allocator_iface.
+* Renamed lltl::char_copy_func to lltl::char_clone_func. 
+* Updated build files to support producing of static library and pkgconfig files.
+* Updated headers to conform with LGPL3+ license.
+* Updated build scripts that now use tags without prefixes first.
+
+=== 0.5.2 ===
+* Added hash interface for objects.
+* Added default hashing function.
+* Implemented lltl::pphash collection which allows to use hash maps.
+* Added is_empty() method to lltl::parray class.
+* Fixed upget() method of lltl::parray.
+
+=== 0.5.1 ===
+* added set method to lltl::parray which allows to set single 
+  collection item at specified position.
+* added set method to lltl::darray which allows to set single 
+  collection item at specified position.
+
+=== 0.5.0 ===
+* Initial release.
+* Implemented darray collection.
+* Implemented parray collection.
+

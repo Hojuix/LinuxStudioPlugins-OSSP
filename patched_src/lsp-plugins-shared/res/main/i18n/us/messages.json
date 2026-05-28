@@ -1,0 +1,58 @@
+{
+	"about": {
+		"copyright": "(C) {@meta_pkg_copyright} 2015-2026.",
+		"description": "This is a collection of open-source audio plugins.",
+		"info": {
+			"pkg_name": "Package name:",
+			"pkg_version": "Package version:",
+			"plug_format": "Plugin format:",
+			"plug_name": "Plugin name:",
+			"plug_version": "Plugin version:"
+		},
+		"values": {
+			"pkg_name": "{@meta_pkg_artifact_name}",
+			"pkg_version": "{@meta_pkg_version}",
+			"plug_format": "{@meta_plugin_format}",
+			"plug_name": "{@meta_plugin_description}",
+			"plug_version": "{@meta_plugin_version}"
+		},
+		"license": "Licensed under the terms of GNU Lesser Public License v3 (LGPLv3):",
+		"license_url": "https://www.gnu.org/licenses/lgpl-3.0.en.html",
+		"support": "Support the project:"
+	},
+	"file": {
+		"confirm_load": "Do you really want to load the selected file?",
+		"confirm_overwrite": "The selected file already exists. Overwrite?",
+
+		"invalid_name": "The entered file name is not valid",
+
+		"not_exists": "The selected file does not exist",
+		"not_specified": "The file name is not specified"
+	},
+
+	"greetings": {
+		"0": "You've just updated plugins to version {@meta_pkg_version}!",
+		"1": "The '{@meta_pkg_full_name}' is non-commercial project and needs financial support for the further development.",
+		"2": "You may help the open source collection of plugins to grow by visiting the following link and submitting donations to the project:",
+		"3": "Remember that subscription and regular small donations will give more benefits to the project than one-time donations.",
+		"4": "IMPORTANT!",
+		"5": "According to sanctions against Russian Federation, any foreign currency payments are blocked.",
+		"6": "The project accepts cryptocurrency dontations only. We hope that all other type of donations will be back soon.",
+		"7": "The LSP Plugins Project is speaking out against any armed conflicts.",
+		"8": "To not to be very annoying, this dialog will be shown only after each version update of plugins.",
+		"9": "Thanks in advance."
+	},
+
+	"postscript": "{@meta_pkg_full_name}",
+	
+	"presets": {
+		"confirm_overwrite": "User preset '{@name}' already exists. Do you want to overwrite it?",
+		"confirm_remove_preset": "Do you want to remove user preset '{@name}'?",
+		"confirm_reset_state": "Do you want to reset settings to default?",
+		"factory_preset_changed": "Factory preset '{@name}' has been changed previously.\nDo you want to switch to selected preset without saving?",
+		"save_preset_failed": "Failed to save user preset '{@name}', error code: {@code}.\nPlease verify the name of the preset and write permissions on the file system.",
+		"user_preset_changed": "User preset '{@name}' has been changed previously.\nDo you want to switch to selected preset without saving?"
+	},	
+	
+	"site": "{@meta_pkg_site}"
+}

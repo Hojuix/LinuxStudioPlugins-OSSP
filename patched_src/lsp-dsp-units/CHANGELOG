@@ -1,0 +1,290 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.35 ===
+* Sidechain optimizations: Sidechain now uses ring buffer instead of shift buffer.
+  This allows to reduce the number of memory copies and memory consumption. 
+* Updated module versions in dependencies.
+
+=== 1.0.34 ===
+* Some small optimizations of equalizers (preventing extra calculations with doubles).
+* Added support of decramping by dspu::Equalizer module.
+* Fixed bug in dynamic delay which can yield to crackling sound when using feedback.
+* Updated module versions in dependencies.
+
+=== 1.0.33 ===
+* Added varying ALR knee support by the dspu::Limiter module. 
+* Fixed out-of sync ALR for the Limiter module when changing the sample rate.
+* Implemented MultiSpectralProcessor class for multi-channel spectral processing.
+* Spectral Processor now allows to analyze input signal without processing.
+* Fixed noise envelope generation.
+* Optimized noise envelope generation algorithm by using LSP DSP library.
+* Optimized spectrum analyzer: reduced memory usage and memory copying.
+* Updated module versions in dependencies.
+
+=== 1.0.32 ===
+* Fixes in 3D object loading.
+
+=== 1.0.31 ===
+* Updated and extended interface of dspu::RingBuffer.
+* Optimizations: dspu::MeterGraph now uses dspu::RingBuffer instead of dsp::ShiftBuffer.
+* Added support of infiniter LUFS measurement period by dspu::ILUFSMeter.
+* Added dspu::PeakMeter class for managing peak values.
+* Fixed crash in dspu::SpectralProcessor::clear method.
+* Updated module versions in dependencies.
+
+=== 1.0.30 ===
+* Added MM_PEAK algorithm to MeterGraph and ScaledMeterGraph.
+* Spectrum analyzer now allows to read linear-scaled frequencies and indices.
+* Implemented ADSREnvelope class for ADSR envelope computation.
+* Added MacOS CI builds.
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Optimized complex resampling algorithm for dspu::Sample.
+* Implemented functions for quick computing of sine, cosine, logarithm and exponent
+  with precision loss.
+* Implemented linear, constant power, exponential and exponential with precision loss
+  interpolation functions.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Added 'listen' playback mode for the sampler in dspu::Sampler.
+* Added support of build for MacOS.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Implemented TruePeak meter.
+* Implemented Panorama meter (Panometer).
+* Implemented ScaledMeterGraph with subsampling option.
+* Implemented QuantizedCounter statistics tool.
+* Implemented ILUFSMeter - integrated LUFS meter.
+* Several fixes and improvements in RawRingBuffer.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Several updates of the dspu::LoudnessMeter module.
+* Bugfixes and improvements in shared memory catalog and clients.
+* Added dspu::Bypass::process_drywet method.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Implemented shared catalog class.
+* Implemented shared audio stream class.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Implemented safer algorithm of loading sample when the underlying stream
+  does not know the actual number of frames in the stream.
+* Implemented dspu::Correlometer module.
+* Optimized LFO sin-based and log-based functions.
+* Fixed DynamicDelay buffer not cleaned up on initialization, garbage could be produced.
+* Implemented dspu::RawRingBuffer which is better suitable for direct memory operations.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Added Hold option to the dspu::Compressor module.
+* Added Hold option to the dspu::Expander module.
+* Added Hold option to the dspu::Gate module.
+* Added Hold option to the dspu::DynamicProcessor module.
+* Fixed RLC implementation of allpass filters.
+* Added support of LR2 (12 dB/oct) filters by the Crossover.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Refactoring and optimizations of the Expander module.
+* Updated interface of the dspu::Sample, added gain function.
+* Expander module now uses functions from lsp-dsp-lib for faster processing.
+* Small optimizations and improvements of the dspu::Delay module.
+* Added possibility to specify additional delay for each channel in dspu::Analzer module.
+* Added dspu::hz_to_samples function.
+* Added process_add methods for the dspu::Delay module.
+* Added dspu::SimpleAutoGain module.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Optimizations of compressor, expander and gate modules.
+* Gate module now uses lsp-dsp-lib for low-level gain and curve optimizations.
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Using lsp-dsp-lib for compressor module optimizations.
+* Added AutoGain module.
+* Added LoudnessMeter module.
+* Added broadcasting-related constants according to BS.1770-4 and BS.2051-3 specificaitons.
+* Fixed band binding algorithm for dspu::FFTCrossover.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Fixed several issues reported by PVS Studio static analyzer.
+* Fixed band characteristics report for FFTCrossover.
+* Fixed sidechain buffer cleanup issue when setting the same to the previous stereo mode.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Added insert() method to dspu::Sample class that allows to insert some zeroed
+  chunks to the sample at the specified position.
+* Improved sidechain algorithm related to RMS refresh.
+* Implemented linear-phase FFT crossover.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Added support of high-precision oversampling routines to dspu::Oversampler module.
+* Added functions for readinng current dspu::Oversampler setup.
+* Added routines for converting music time signature to frequency/period.
+* Implemented series of normalized LFO functions.
+* Implemented dspu::RingBuffer class for processing the circular ring buffers.
+* Added possibility to pass callback function do dspu::Oversampler as an alternative
+  to the interface pointer.
+* Updated design of the RLC bandpass filter.
+* Removed the delay from the dspu::Limiter module. The caller should implement it's own delay.
+* Fixed ALR distortion issue for the dspu::Limiter module.
+* Added dspu::SurgeProtector module.
+* Fixed bug in dspu::DynamicProcessor which could produce NaNs.
+* Fixed several bugs in the dspu::Oversampler module, small optimizations.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Implemented A, B, C, D and K weightening filters.
+* Methods save and save_range of dspu::Sample are marked as const.
+* Marked dspu::Sample::getBuffer as deprecated, use dspu::Sample::channel instead.
+* Added dspu::Sample::remove method to remove part of sample data.
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Changed visibility of the dspu::InSampleStream class to public.
+* Added dspu::Filter::limit method for limiting frequency parameters of the filter.
+* Added dspu::Equalizer::limit_params mehod for limiting frequency parameters of
+  the corresponding filter.
+* Implemented smooth mode for the FIR/IIR type of equalizer which performs the
+  cross-fade on the change of filter characteristics.
+* Implemented functions for converting the frequency to a note.
+* Added possiblity to load sample built-in into SFZ file format.
+* Added test build for Windows using MSYS2.
+* Raised the resampling precision for the dspu::Sample::resample().
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Added MIDI note to frequency convertion function dspu::midi_note_to_frequency.
+* Added set of functions to convert Neper to dB and gain values.
+* Bugfixes found by Clang compiler.
+* Added Clang build for the CI.
+
+=== 1.0.7 ===
+* Added dspu::Analyzer::activity() method to check the analyzer's activity.
+* Fixed possible memory leakage in dspu::Sample methods.
+* Fixed bug in dspu::fade_in and dspu::fade_out methods that didn't copy data
+  to destination buffer when the fade length is zero.
+* Found and fixed serious performance penalties that could be issued
+  by dspu::Limiter on small input buffers.
+* Added dspu::InSampleStream class for working with audio sample in streaming manner.
+* Added dspu::Sample::load_ext and dspu::Sample::loads_ext methods for loading sample
+  as a part of LSPC file when possible.
+* Added SCS_AMIN and SCS_AMAX functions for the sidechain input mode.
+* Updated build scripts.
+* Implemented garbage collection mechanism for the dspu::SamplePlayer.
+
+=== 1.0.6 ===
+* Fixed clang errors.
+
+=== 1.0.5 ===
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Fixed unintialized values in several modules.
+* Added Sample::stretch() method for stretching samples.
+* Updated dspu::Gate module, now it allows to properly use the reverse gate option.
+* Improved mathematics in dspu::Compressor module, added support of limited compression gain.
+* Updated build scripts.
+
+=== 1.0.3 ===
+* Fixed memory leak in dspu::LatencyDetector module.
+* Fixed operation on uninitialized values for dspu::Depopper module.
+* Added support of modern C++ 11 standard and above.
+* Updated dependencies.
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Fixed typo in Wavefront Object File Format name.
+* Added dspu::semitones_to_frequency_shift function that allows to compute relative
+  frequency multiplier for relative musical pitch shift.
+* Added set_channels() method to the Sample class for easy resizing purpose.
+* Fixed uninitialized variable usage in the dspu::Crossover module.
+* Many bugfixes and updates related to colored noise generation.
+* Updated build scripts.
+
+=== 1.0.1 ===
+* Fixed bugs in construct()/destroy() method pairs for several DSP modules.
+* Added denial of copy constructors for all DSP units.
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Added MLS noise generator.
+* Added LCG Noise generator
+* Added Velvet Noise generator.
+* Added Spectral Tilt arbitrary color filter.
+* Added High order Butterworth filter for inaudible noise.
+* Added Noise Generator class for arbitrary noise generation.
+
+=== 0.5.4 ===
+* Added dspu::Sample::normalize method for sample normalization.
+* Updated build system.
+* Added raytracing-related program modules.
+* Added trigger module.
+* Added x4 lobe support for oversampling.
+
+=== 0.5.3 ===
+* Added LSP_DSP_UNITS_SOUND_SPEED_M_S constant that defines sound speed.
+* Added reset() method to the dspu::Equalizer class to reset internal memory.
+* Added different information methods to the dspu::Equalizer which allow to obtain
+  the current configuration state of the equalizer.
+
+=== 0.5.2 ===
+* Updated tracing information.
+* Added maximum latency estimation for several modules.
+* Updated the compressor module: added CM_BOOSTING mode for upward compression.
+
+=== 0.5.1 ===
+* Added DynamicDelay DSP processing unit.
+* Fixed latency computation error for FIR and FFT modes of the filter.
+* Optimized FIR and FFT dspu::Equalizer modes to use dsp::fastconv_ routines instead of FFT.
+* Added SPM (Spectral Processing Module) mode to dspu::Equalizer module.
+* Updated interface of dspu::Analyzer module, fixed inter-channel out-of-sync issue.
+* Added dspu::fade_in and dspu::fade_out functions.
+* Updated build system.
+
+=== 0.5.0 ===
+* Initial release.
+

@@ -1,0 +1,304 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.36 ===
+* Fixed test build.
+* Fixed regression related to UI scaling and font scaling.
+* Fixed recurse plugin window positioning bug which could yield memory
+  leaks in the X11-emulated Wayland environment.
+* Added multiple plugins launch option by Launcher tool.
+* Fixed possible read/write concurrency on the global configuration file.
+* Added possibility to trace content of audio ports in debug mode.
+* Updated module versions in dependencies.
+
+=== 1.0.35 ===
+* Implemented plugin launcher tool.
+* Added shortcuts for quickly closing some dialogs.
+* Added support to switch presets with mouse scroll.
+* Fixed bug of failing UI show when plugins's global configuration file is missing.
+* Optimized plugin window sizing.
+* Updated resource packing tool: using strings as byte arrays causes compiler to crash
+  on low memory.
+* Updated module versions in dependencies.
+
+=== 1.0.34 ===
+* Added support of revisioned Add-on controls to not to change the order of
+  previously defined controls for the host.
+* Added possibility to select host-friendly or user-frienfly values when
+  exporting configuration to the file.
+* Updated port link controller: added support of '_old_this', '_this',
+  '_old_current' and '_current' meta values.
+* Do not store VST3 host context as reference-counting pointer as it crashes
+  Ardour on exit.
+* Fixed possible garbage at the end of KVT BLOB serialization.
+* Fixed moduleinfo.json generation and validation for VST3.
+* Fixed duplicate filter point settings in UI behavior.
+* Fixed some bugs in VST3 plugin state deserialization
+* Updated module versions in dependencies.
+
+=== 1.0.33 ===
+* Improved plugin metadata validation tool.
+* Fixed SIGFPE crash on LADSPA descriptor generation.
+* VST3 data synchronization now is performed in the UI thread if possible.
+* Fixed data transport for LV2 plugins.
+* Fixed VST3 crash on JUCE-based hosts.
+* Updated module versions in dependencies.
+
+=== 1.0.32 ===
+* Added support of BeginEdit and EndEdit events for CLAP, LV2, VST2 and VST3 formats.
+* Added ctl::RangeSlider controller for controlling range of two parameters.
+* Added ctl::PianoKeys controller for controlling piano keyboard layout.
+* Added ctl::Embed controller for placing widgets on the graph widget.
+* Implemented A/B preset switching support by plugins.
+* Fixed VST3 plugins crash under Ardour related to improper IRunLoop interface
+  operations based on invalid API calls by the DAW.
+* Fixed setting paths for LV2 plugins using generic plugin interface.
+* Updated module versions in dependencies.
+
+=== 1.0.31 ===
+* Added command line option for JACK that allows to specify client name.
+* Implemented preset management in the UI of the plugin.
+* Added Steinberg::Linux::IEventHandler support for better integration with
+  the editorhost from the Steinberg SDK.
+* Changed VST3 chunk format incompatible with previous plugin versions.
+* Added possibility to automatically play samples when navigating file list.
+* Added ctl::Controller class that is a base controller class for UI settings.
+* Implemented ctl:link controller that allows to link values together in the UI.
+* Implemented ctl::AudioEnvelope controller.
+* Implemented pre-compression of OBJ files before adding to built-in resources.
+* Updated module versions in dependencies.
+
+=== 1.0.30 ===
+* Refactored support of activity property.
+* Added possibility to launch standalone plugins in minimized window state.
+* Added support of inactive backround color, brightness and backround brightness.
+* Fixed broken transport (tempo BPM) synchronization for CLAP plugin format.
+* Fixed regression related to creating new global configuration file.
+* Added basic Overlay support.
+* Added MacOS dependencies.
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Added workaround for Renoise host related to latency reporting by VST2 and VST3 plugins
+  on state load.
+* Added possibility to use custom scaling for each plugin bundle.
+* Added highlighting of active item in AudioFolder controller.
+* Removed ctl::Switch controller as outdated.
+* Fixed unnecessary output parameter cleanup when importing configuration.
+* Fixed regression in VST3 parameter setup.
+* Added activity option for controllers:
+  * ctl::Button;
+  * ctl::CheckBox;
+  * ctl::ComboBox;
+  * ctl::Edit;
+  * ctl::Fader;
+  * ctl::FileButton;
+  * ctl::Fraction;
+  * ctl::Indicator;
+  * ctl::Knob;
+  * ctl::Led;
+  * ctl::MidiNote;
+  * ctl::ProgressBar.
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Fixed LV2 plugin factory link regression.
+* Fixed possible file/sample name loss on deactivated plugin for all modern formats.
+* Added possibility to specify custom styles for channels in AudioSample controller.
+* Updated Fader and Knob controllers for better performance.
+* Added possibility to draw background around tk::GraphText widget.
+* Added maximum amplitude property to AudioChannel and AudioSample.
+* Fixed VST3 integer parameter setup.
+* Added TabGroup widget support.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Updated VST3 SDK to 3.7.12, may be breaking changes related to parameter identifiers as
+  Steinberg has twice reduced the set of valid paremeter identifiers.
+* Fixed bug related to window sizing for CLAP plugin format.
+* Fixed unneeded resource object deletion and use-after-free in VST plugin wrapper.
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Added support of audio send and audio return by the engine.
+* Implemented AudioNavigator controller.
+* Implemented AuidoFolder controller.
+* Fixed port group value synchronization for JACK wrapper.
+* Added documentation_path parameter in user configuration file which allows to
+  configure the path to the offline documentation installation.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Better work with plugin window size.
+* Plugins now can be built without the ui if we omit the 'ui' feature in
+  build configuration.
+* Added support of string ports.
+* Improved build tools: UI resources are now built-in only for libraries that
+  need them.
+* Several fixes for VST3 wrapper.
+* Added INSTALL_FEATURES option.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Added obtaining information about the original file provided by the
+  MapPath::absolute_path LV2 extension.
+* Added custom option support by ComboBox.
+* Fixed behaviour of ctl::Fraction when writing values.
+* Added text estimation support by the Parameter controller.
+* Added ListBox controller.
+* Added empty text support for Edit controller.
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Added experimental support of VST3 plugin format.
+* Added helper functions to ui::Module.
+* Added possibility to build and launch without builtin resources.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Fixed configuration file serialization.
+* Code updates that could cause potential problems related to using another
+  decimal point for floating-point number formatting.
+* Added support of storing current file type selection in file dialogs.
+* Added support of variable size of filter dots.
+* Implemented widget overrides by priority on the graph widget.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Fixed VST2 plugin crash on UI close in OBS Studio.
+* Fixed parameter ranges for CLAP plugin wrapper.
+* Fixed double free of generated port metadata.
+* Added LUFS units to metadata.
+* Added support of 'zero' property by the Axis controller.
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Fixed several issues reported by PVS Studio static analyzer.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Several bugfixes in the ctl::Dot controller related to handling logarithmic values.
+* Added possibility to evaluate substituted text values.
+* Introduced ctl::LineSegment widget controller.
+* Fixed memory leakage related to not complete release of allocated memory on UI destruction.
+* Added generation of explicit element definitions for LV2 groups in TTL files.
+* Added flags to ui::IPortListener::notify() method that allow to indicate the source of the event.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Added possibility to invert the behaviour of mouse scroll for all widgets or
+  for graph dot widget.
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Fixed CLAP UI support for Bitwig Studio.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Fixed build that disabled CairoCanvas for Inline Display feature.
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Added shared objects related to 3D rendering to LV2, VST and CLAP packages.
+* Fixed buggy tether for the parameter popup window. 
+* Fixed improper data stream synchronization using LV2:Atom protocol.
+* The layout and text layout are now expressions for the ctl::Text controller.
+* Fixed label value update when switching language in the UI.
+* Fixed plugin state out of sync for CLAP plugin format on state restore in REAPER.
+* Added support of named widget groups.
+* Updated VST core library lookup algorithm.
+* Created additinal bundle categories.
+* plug::osc_buffer_t moved to core::osc_buffer_t.
+* Added --version command line argument to obtain the version of plugins.
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Added CLAP plugin format support.
+* Changed VST parameter normalized value mapping for logarithmic parameters.
+* Added possibility to specify JACK connections that should be estimated by the
+  standalone JACK plugin when the plugin connects to the JACK server. 
+* Significantly improved text value parsing into the port value.
+* Implemented plugin metadata validator.
+* Fixed bug related to modification of cyclic parameters for several plugin formats.
+* Fixed possible crash when reading data from clipboard.
+
+=== 1.0.7 ===
+* Improved preset loading for incomplete presets that are missing some plugin parameters.
+* Fixed broken configuration save and load with relative file paths.
+* Extended possibilities of configuration export: now passing configuration serializer is possible.
+* Fixed possible concurrency problems on LADSPA/LV2/LV2UI library initialization.
+* Fixed possible cases of access to the deallocated memory when working with the SwitchedPort port.
+* Added possibility to preview the audio file contents in the file dialog.
+
+=== 1.0.6 ===
+* Fixed Clang warnings and errors.
+
+=== 1.0.5 ===
+* Fixed several memory leaks in plugin wrapper implementation.
+* Migrated to support of C++ 11 standard and above.
+* Added workaround for proper VST 2.x UI support by OBS Studio.
+* Updated dependencies.
+
+=== 1.0.4 ===
+* Fixed plugin version tracking which didn't save the updated version
+  to the configuration file. 
+* Fixed improper configuration file import in JACK headless mode.
+* Fixed segmentation fault error in JACK headless mode when JACK connection was lost.
+* Better control over plugin identifiers in metadata.
+* Added window scaling button function.
+* Added ipadding property to the Label controller.
+
+=== 1.0.3 ===
+* Introduced effEditKeyDown and effEditKeyUp VST2 event handling if the host prevents
+  plugins of receiving X11 events.
+* Introduced JACK connection status indication for JACK plugin format.
+* Added widget controller for text edit.
+* Added methods idle() and kvt_changed() to ui::Module class.
+* Changed the behaviour and contract of ui::Module::reset_settings() method.
+* Updated serialization format of the KVT (Key-Value Tree) for the LV2 plugin format.
+* Updated parameter mapping LV2 URI for KVT.
+* Fixed bugs related to usage of custom installation prefix.
+* Fixed problem with the UI visibility status update for JACK plugin format
+  that could cause problems with missing of some graphical content in the UI.
+* Fixed the XDG data installation script that forced to use '/usr/local/share'
+  location for shared icons.
+* Fixed invalid pointer dereference when exporting configuration file.
+* Fixed bug that caused JACK plugins launched in headless mode to crash.
+* Fixed regression related to saving state of some controls using lv2:State interface.
+* Fixed missing serialization for high-precision parameters in the configuration file.
+* Fixed bug related to improper parsing of port name aliases in the UI.
+* Fixed typo in Wavefront Object File Format name.
+* Updated version handling in the UI wrapper that allows to control multiple bundle
+  versions in one global configuration file.
+* Fixed bugs of KVT state restoration related to string-typed parameters.
+
+=== 1.0.2 ===
+* Fixed compiler issue.
+
+=== 1.0.1 ===
+* Bugfixes.
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Initial release.
+

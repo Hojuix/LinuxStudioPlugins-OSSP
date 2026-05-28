@@ -1,0 +1,225 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.46 ===
+* Better Haiku support.
+
+=== 1.0.45 ===
+* Added strend() function for returning pointer to the end of C string.
+* Added strmemdup() function for converting sequence of bytes to C string.
+* Added lsp::exchange utility function.
+* Added lsp::unconst_ptr utility function.
+* Refactoring of headers, moved code from <types.h> to <utility.h> and <fixed_int.h>.
+* Added new status codes.
+
+=== 1.0.44 ===
+* Some improvement around endianess conversion functions.
+* Updated some basic definitions related to pointer allocation.
+
+=== 1.0.43 ===
+* Better memory safety macros definition.
+* Added MacOS CI builds.
+* Updated module versions in dependencies.
+
+=== 1.0.42 ===
+* Several changes related to bit operations.
+* Improved atomic operations.
+* Updated module versions in dependencies.
+
+=== 1.0.41 ===
+* Added fixed_int function for proper platform-dependent integral type conversion to
+  fixed-size type conversion defined by intN_t and uintN_t types.
+* Added definition of MacOS dependencies in build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.40 ===
+* Fixed build for musl library (contributed by Daniel Martinez).
+* Added lsp::fixed_int functions to simplify cast of size_t to fixed-width data type.
+* Updated module versions in dependencies.
+
+=== 1.0.39 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.38 ===
+* Locale settings from the <stdlib/locale.h> are now applied in thread-local context.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.37 ===
+* Updated definition of atomic operations.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.36 ===
+* Added inplace new definition.
+
+=== 1.0.35 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.34 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.33 ===
+* Implemented advance_ptr and advance_ptr_bytes functions.
+* Introduced stdlib/locale.h header and SET_LOCALE_SCOPED macro for easy locale
+  change and update.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.32 ===
+* Added realloc_aligned function.
+* Added round_pow2 function for rounding integer values up to power of 2.
+
+=== 1.0.31 ===
+* Fixed several issues reported by PVS Studio static analyzer.
+* Added release_ptr() template method for releasing pointers that should be freed by finally statement.
+
+=== 1.0.30 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Small header updates.
+
+=== 1.0.26 ===
+* Updated implementation of fdsync() for Windows.
+* Updated definition of LSP_HIDDEN_MODIFIER under Windows.
+* Added default definition for PATH_MAX of 4096 if it is missing in <limits.h>.
+* Added debug::log_string data structure for easy logging non-char strings.
+* Added test build for Windows using MSYS2.
+* Reorganized architecture-dependend inline assembly into smaller files.
+* Added support of older ARM architectures regardless to atomic operations and
+  endian byte swap operations.
+* Updated atomic_cas implementation for ARM.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Added Clang build for the CI.
+
+=== 1.0.24 ===
+* Updated headers.
+
+=== 1.0.23 ===
+* Added <common/variadic.h> header for support of variadic templates.
+* Added <common/singletone.h> header for thread safe initialization of singletone data.
+* Updated build scripts.
+
+=== 1.0.22 ===
+* Updated build scripts.
+
+=== 1.0.21 ===
+* Got rid of the <windows.h> plague header in header files.
+* Better workaround for vasprintf function.
+* Support for compilation with Clang under AArch64.
+* Support for compilation with Clang under ARMv6 and ARMv7.
+* Updated build scripts.
+
+=== 1.0.20 ===
+* Updated implementation of lsp_finally macro. Now it became debuggable.
+* Updated build scripts.
+
+=== 1.0.19 ===
+* Updated assembly code for bits.
+* Better compatibility with clang (removed 'register' keyword).
+
+=== 1.0.18 ===
+* Added lsp_finally macro definition for automatic scope finalizers.
+* Changed C++ standard support to at least C++ 11.
+* Updated dependencies.
+* Updated build scripts.
+
+=== 1.0.17 ===
+* Updated build scripts.
+
+=== 1.0.16 ===
+* Updated build system.
+
+=== 1.0.15 ===
+* Added update_status function for accumulating error code in status_t variable.
+* Added lsp::lsp_malloc template function for allocating arrays.
+* Added lsp::StaticInitializer, lsp::StaticFinalizer and lsp::StaticManager classes for static data.
+* Added placeholders for log functions when they are not used.
+* Fixed typo in version function definition.
+* Moved some function implementation from types.h header to types.cpp.
+* Fixed bug in log redirection to file.
+* Added support of building under LoongArch32 and LoongArch64 architectures.
+* Added support of building under 32-bit and 64-bit RISC-V architectures.
+
+=== 1.0.14 ===
+* Added lsp_xlimit function to limit ranges for both min < max and min >= max ranges.
+* Added VERBOSE flag support by the make tools.
+* Added detection of the glibc library usage.
+
+=== 1.0.13 ===
+* Added IF_TRACE and IF_DEBUG macros to <common/debug.h>.
+* Updated build.
+
+=== 1.0.12 ===
+* Updated build system.
+* Added package versioning.
+
+=== 1.0.11 ===
+* Added wrapper around <stdlib.h>.
+* Added platform-independent lsp::qsort_r function implementation that
+  matches GNU one.
+
+=== 1.0.10 ===
+* Added M_GOLD_RATIO and M_RGOLD_RATIO definitions to stdlib/math.h wrapper.
+* Added LSP_SYMBOL_HIDDEN definition.
+
+=== 1.0.9 ===
+* Updated smword_t and umword_t type definitions.
+
+=== 1.0.8 ===
+* Added range definitions for umword_t and smword_t types.
+* Updated build scripts that now use tags without prefixes first.
+* Updated headers and license files to match LGPL3+ license.
+* Updated make files to produce static library, pkgconf file and source tree.
+
+=== 1.0.7 ===
+* Added lsp_setflag method.
+
+=== 1.0.6 ===
+* Added lsp_limit method.
+* Updated build system.
+* Changed exports.
+
+=== 1.0.5 ===
+* Additional macro definitions in types.h header.
+* Added new status constants in status.h header. 
+
+=== 1.0.4 ===
+* Updated build system.
+* Modified module versioning support.
+
+=== 1.0.3 ===
+* Updated build scripts.
+* Added versioning support.
+
+=== 1.0.2 ===
+* Added debugging header and functions.
+
+=== 1.0.1 ===
+* Added some wrappers for standard C library.
+* Added basic atomic manipulation functions.
+* Added endianess manipulation functions.
+* Added bit manipulation functions.
+* Added pointer alignment and aligned pointer allocation routines.
+
+=== 1.0.0 ===
+* This is initial release of LSP common library for further enhancements and updates.
+

@@ -1,0 +1,57 @@
+{
+	"axis": {
+		"+phase": "+phase",
+		"-phase": "-phase",
+		"amplitude": "amplitude",
+		"chan": {
+			"left": "left",
+			"mid": "mid",
+			"right": "right",
+			"side": "side"
+		},
+		"depth": "depth",
+		"in": "in",
+		"level": "level",
+		"out": "out",
+		"period": "period",
+		"phase": "phase",
+		"reverb_time": "reverb time",
+		"time": "time",
+		"x": "X",
+		"y": "Y"
+	},
+
+	"units": {
+		"db": "dB",
+		"hz": "Hz",
+		"ms": "ms",
+		"pc": "%",
+		"s": "s"
+	},
+	
+	"values": {
+		"1k": "1k",
+		"10k": "10k",
+		"idL_eft": "{@id}L",
+		"idM_id": "{@id}M",
+		"idR_ight": "{@id}R",
+		"idS_ide": "{@id}S",
+		"max": "max",
+		"min": "min",
+		"x::2f": "{@value%.2f}",
+		"x::f": "{@value%.4f}",
+		"x:db:f;x::f": "{@db%.2f} dB\n{@value%.4f}",
+		"x:db": "{@value} dB",
+		"x:db:f": "{@value%.2f} dB",
+		"x:deg": "{@value}°",
+		"x:hz": "{@value} Hz",
+		"x:lu": "{@value} LU",
+		"x:lufs": "{@value} LUFS",
+		"x:ms:2f": "{@value%.2f} ms",
+		"x:pc:f": "{@value%.1f} %",
+		"x:s": "{@value} s",
+		"x:s:2f": "{@value%.2f} s",
+		"x_T": "{@value}T",
+		"x_k": "{@value}k"
+	}
+}

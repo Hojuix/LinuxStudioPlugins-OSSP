@@ -1,0 +1,359 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.33 ===
+* Additional color computation optimizations: removed extra multiplication when
+  converting RGB to XYZ and back.
+* Bugfixes in RGBA to PRGBA pixel conversions.
+* Added file descriptor locking mechanism on file open.
+* Better Haiku support.
+* Updated module versions in dependencies.
+
+=== 1.0.32 ===
+* Added program lookup using in PATH environment variable when launching process.
+* Added system::exec_detached functions for launching detached processes.
+* Some updates and improvements on the configuration parser and serializer.
+* Added condition variables support.
+* Added support of XPM1/XPM2/XPM3 icon format.
+* Improved interface of lsp::Color class.
+* Added lsp::mm::IColorMap interface.
+* Added lsp::mm::Bitmap class.
+* Better parsing APO equalizer text files.
+* Better decoding audio file loading errors.
+* Updated module versions in dependencies.
+
+=== 1.0.31 ===
+* Task execution mechanism moved task state field from volatile to atomic.
+* Updated LLTL hashing specifications.
+* Fixed $XDG_CONFIG_HOME being ignored.
+* Updated module versions in dependencies.
+
+=== 1.0.30 ===
+* Added possibility to perform casted fetch from expr::value_t.
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Implemented simple compressor for Wavefront OBJ files.
+* Fixed bug in determining file size for Unix-like systems.
+* Several optimizations of standard compression algorithm.
+* Fixed bug in associativity of add, sub, mul, div and bit-and expressions.
+* Added MacOS CI builds.
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Reduced poll interval for ipc::NativeExecutor to 20 milliseconds.
+* Fixed invalid access to missing built-in resources.
+* Fixed some command line options that caused JACK version to crash.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Better support of MacOS.
+* Added possibility to modify configuration parameters.
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Added system::get_user_login() function.
+* Fixed io::Path::canonicalize() crashes on several input data.
+* Added index_of_nocase and rindex_of_nocase methods for LSPString.
+* Added io::OutMemoryStream::position() method implementation.
+* Another implementation of ipc::SharedMutex for POSIX systems that allows to
+  avoid dead locks when the application that locked the mutex has been
+  terminated.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Implemented IInSequence::sink() method for writing all content to another IOutSequence.
+* Fixed possible access to uninitialized memory when loading built-in resources.
+* Added Thread::yield() method.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Implemented system::page_size() and system::system_cores() functions.
+* Extended ipc::SharedMem interface.
+* Implemented UUID generation and formatting header.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Fixed reading of 32-bit FLOAT WAV files that do not contain fact chunk on Windows.
+* Implemented min(), max(), rms() and avg() builtin functions for expression language.
+* Implemented io::Path::final_path method for obtaining the final file system object
+  the abstract path points to.
+* Implemented ipc::SharedMem primitive for organizing shared memory segments.
+* Implemented ipc::SharedMutex primitive for organizing global inter-process mutexes.
+* Implementeation of ipc::Mutex moved to critical section for Windows.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* More detailed MIDI specification (added MIDI_CHANNELS constant).
+* Additional methods for converting between UTF-8, UTF-16 and UTF-32.
+* Added support of real-time nesting of ipc::IExecutor.
+* Added support of custom functions in the expression language.
+* Enhanced JSON serializer interface with new functions.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Optimized expression variables access.
+* Many code updates that could cause potential problems related to using another
+  decimal point for floating-point number formatting.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Fixed several issues reported by PVS Studio static analyzer.
+* Fixed invalid memory read on OSC protocol pattern matching.
+* The i18n JsonDictionary is forced to be UTF-8. 
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Fixed potential problem with invalid delete in io::PathPattern.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Extended expression language with basic mathematic functions.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Fixed improper expression parsing under certain conditions.
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Updated the implementation of io::StdioFile::size() method for Windows.
+* Fixed ipc::Library::get_module_file function for Windows.
+* Added test build for Windows using MSYS2.
+* Added lsp::to_lower and lsp::to_upper character conversion routines
+  (system locale independent support of Latin and Cyrillic characters).
+* Implemented io::InSharedMemoryStream class for shared access to the data.
+* Deprecated io::IOutStream::writeb() function, use io::IOutStream::write_byte() instead.
+* Added possibility to create temporary files for io::NativeFile and io::OutFileStream.
+* The io::InMemoryStream::take() now releases data associated with io::OutMemoryStream.
+* Added possibility to attach automatically managed user data to mm::IInAudioStream
+  and mm::IOutAudioStream.
+* Added support of SFZ file format parsing.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Added io::InMemoryStream::size() method for obtaining the size of the wrapped buffer.
+* Additional expr::Expression::parse() method that takes UTF-8 strings at input.
+* Added expr::EnvResolver variable resolver that reads environment variables.
+* Added io::Path::get_noext() and io::Path::get_last_noext().
+
+=== 1.0.10 ===
+* Fixed bug in io::Path::as_relative() call.
+* Fixed bug in lspc::AudioWriter::write_frames() method.
+* Added lspc::IAudioFormatSelector interface class for selecting audio format
+  when writing to LSPC file.
+* Added several utility functions for easier work with LSPC file format.
+* Fixed bug related to reading audio files with 24-bit audio format under Windows.
+* Added empty key support in the i18n dictionary configuration file.
+* Updated build scripts.
+
+=== 1.0.9 ===
+* Updated build scripts.
+
+=== 1.0.8 ===
+* Fixed improper export definitions (typo in macro).
+
+=== 1.0.7 ===
+* Added system::get_time_millis() function.
+* Got rid of the <windows.h> plague header in header files.
+* Fixed integer overflow in system::time_t data structure for 32-bit systems
+  by extending the size of seconds field up to 64 bit.
+* Added system::get_volume_info() and system:: free_volume_info() functions
+  for obtaining list of mounted volumes in the system.
+* Added URL-decoding of the name of the link for QT5 bookmarks.
+* Fixed improper size tracking in io::OutMemoryStream::writeb() method.
+* Fixed several bugs in LSPString class implementation.
+* Added support of reading *.lnk files as bookmarks.
+* Fixed memory leakage in lsp::obj::PullParser::wrap() method.
+* Fixed bug in io::Path::canonicalize() method that could issue reads outside
+  of allocated memory.
+* Fixed improper usage of sf_open function of libsndfile in mm::InAudioFileStream.
+* Updated build scripts.
+
+=== 1.0.6 ===
+* Added opacity manipulation to the lsp::Color class.
+* Added LSPString::range_length() method to compute the length of the range.
+* Added LSPString::to_unix() and LSPString::to_dos() line ending conversion routines.
+* Fixed LSPString::prepend_utf8() function.
+* Updated build scripts.
+
+=== 1.0.5 ===
+* Updated PrefixLoader interface and implementation.
+* Fixed the improper use of nanosleep when introducing the sleep function.
+* Fixed bug in path matching algorithm for io::PathPattern class.
+* Better handling of error codes for files under Windows platform.
+* Fixed failed case for ipc::Process launching algorithm under Windows platform.
+* Fixed LSPString behaviour related to call of get_native() method for empty string.
+* Fixed bug in io::Dir::reads() method for Windows platform that returned invalid
+  file attributes.
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Updated build scripts.
+
+=== 1.0.3 ===
+* Updated grammar in several text comments.
+* Added system::sleep_msec function for millisecond-precise sleeps.
+* Fixed typo in Wavefront Object File Format name.
+* Renamed method OutBitStream::writeb to OutBitStream::bwrite to not to clash with
+  the parent IOutStream class.
+* Added LSPString::ends_with_ascii and LSPString::ends_with_ascii_nocase methods.
+
+=== 1.0.2 ===
+* Updated build scripts.
+
+=== 1.0.1 ===
+* Better support of RoomEqWizard ill-formed files.
+
+=== 1.0.0 ===
+* Improved expr::format functions: extended format specifiers.
+* Refactoring of the lsp::Color utility class interface.
+* Added support of XYZ color space by the lsp::Color utility class.
+* Added support of CIE LAB D65 color space by the lsp::Color utility class.
+* Added support of CIE LCH D65 color space by the lsp::Color utility class.
+* Added support of CMYK color space by the lsp::Color utility class.
+* Added support of function-look color parsing by the lsp::Color utility class.
+* Color::scale_lightness renamed to Color::scale_hsl_lightness, added Color::scale_lch_luminance.
+* The fields of system::time_t structure are now of signed type.
+* Added overloaded implementation of Serializer::write_blob function.
+* fmt::config now delegates db parameter conversion to caller code.
+* Fixed Path::is_reg() method implementation for POSIX-based systems.
+* Fixed bug in the resource::Compressor and resource::Decompressor classes which could cause
+  file corruption at decompression stage.
+* Reduced size of fields for resource::raw_resource_t structure.
+* Fixed bug in Wavefront OBJ file parser: the locale of the file always should be considered to be C.
+
+=== 0.5.10 ===
+* Added support of boolean parameters by the configuration parser.
+* Added resource::PrefixLoader resource loader implementation.
+* Added supplementary methods to the configuration parameters.
+* Refactored the lsp::Color class: less inline code, more flexible methods.
+* Fixed bug in fmt::obj::PushParser class behaviour.
+
+=== 0.5.9 ===
+* Several fixes for resource compressor.
+* Removed fdatasync() call for io::NativeFile::flush method.
+* Added system::get_current_dir() function.
+* Added support of IOutStream::writeb() function.
+* Added system::follow_url() functions to follow the specified URL.
+* Fixed IDictionary::lookup() behaviour related to dictionaries.
+* Added boolean parameter output support to the config::Serializer class.
+
+=== 0.5.8 ===
+* Added support of DOM parsing and serializing for JSON files.
+* Added io::File::copy methods for copying files.
+* Added io::Path::mkparent methods for creating parent directories.
+* Added io::File::mkparent methods for creating parent directories.
+* Added io::Path::get_first, io::Path::remove_first, io::Path::pop_first, io::Path::pop_last methods.
+* Added io::OutBitStream class for manipulating output bit streams.
+* Added io::InBitStream class for manipulating input bit streams.
+* Added io::Path::clone, io::Path::compare_to and io::Path::hash methods for collection purposes.
+* Added argument check for NULL for lspc::File class methods.
+* Fixed character set encoding bugs for several systems that have limited libiconv.
+* Added clear() and reduce() methods for io::OutMemoryStream.
+* Implemented builtin resource compressor.
+* Implemented builtin resource decompressor.
+
+=== 0.5.7 ===
+* Added system::get_localtime function.
+* Refactored test directory tree.
+* Added instrumentComponent tag support for Hydrogen.
+* Added io::Path::rename and io::File::rename functions.
+* Added mark() and reset() methods to io::IInSequence interface.
+* Added support of mark() and reset() methods by io::InStringSequence class.
+* Added io::InMarkSequence class to allow mark() and reset() for input data.
+* Fixed bug in io::InStringSequence::read method which could overflow
+  the output buffer.
+* Added get_ext() and get_noext() methods to the io::Path class.
+
+=== 0.5.6 ===
+* Updated build (better support for BSD systems).
+* Fixed clang warnings.
+* Added set_native method to io::Path.
+
+=== 0.5.5 ===
+* Added support of color parsing by expr::Tokenizer when using expr::TF_COLOR flag.
+* Added new token types: expr::TT_SHARP and expr::TT_AT.
+* Added Color::swap method.
+* Better work with vfork() system call.
+* Added io::PathPattern class for file name matching.
+* Added remove_root method to io::Path class.
+* Added resource::ILoader class that allows to access resources stored in some
+  location (not only file system).
+* Added resource::DirLoader class that allows access resources stored in some
+  directory and it's subdirectories.
+* Added resource::Environment class that allows to map key<->value string pairs.
+* Added support of resource::ILoader by i18n::Dictionary class when loading JSON
+  files.
+* Added methods Path::is_dot(), Path::is_dotdot(), Path::is_dots().
+* Optimized methods Path::is_dot() and Path::is_dotdot().
+* Added methods Path::valid_file_name() and Path::valid_path_name().
+* Fixed bug in Path::remove_last() method.
+* Fixed RGB to HSL conversion in Color class.
+
+=== 0.5.4 ===
+* Updated LSPString lltl specifier to match lltl-lib 0.5.3.
+* Updated build files to support static library builds.
+* Updated license files to better conform LGPL3+ license.
+* Updated build scripts that now use tags without prefixes first.
+* Updated headers and license files to match LGPL3+ license.
+* Updated make files to produce static library, pkgconf file and source tree.
+
+=== 0.5.3 ===
+* Added system::get_temporary_dir() functions.
+* Added support of Hydrogen drumkit XML file format.
+* Better compatibility with old gcc, glibc and libsndfile.
+* Replaced pthread_yield() with sched_yield() calls in mutexes.
+
+=== 0.5.2 ===
+* Added i18n support.
+* Updated swap functions for expr::Parameters and LSPString.
+* Implemented additional parsing methods to the lsp::Color class.
+* Added unit tests for LSPString and Color classes.
+* Renamed invalid resolve_entity() method to set_value() method for xml::PullParser.
+* Added TT_COMMA token to expr:Tokenizer.
+* Added support of TF_XKEYWORDS flag by expr:Tokenizer which allows to interpret
+  keywords as barewords.
+* Changed bug in UTF-16 decoding of surrogate pairs.
+* Improved JSON serialization to match standard.
+
+=== 0.5.1 ===
+* Added Color class.
+* Added 'valid_library_name' routines to ipc::Library class for library
+  name validation.
+
+=== 0.5.0 ===
+* Initial release.
+* Core runtime modules.
+* Support of simple built-in expression language interpreter.
+* Support of different file formats.
+* Basic OS-independent I/O abstraction layer support.
+* OS-independend character set conversion layer support.
+* OS-independend Inter-process communication (IPC) primitives.
+* Basic multimedia (MM) streaming primitives.
+* Different musical protocol support.
+
