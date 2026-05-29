@@ -26,6 +26,11 @@
 #include <lsp-plug.in/ipc/Thread.h>
 #include <lsp-plug.in/runtime/system.h>
 
+// HOJUIX PATCH
+#if defined(__ANDROID__)
+#include <android-compat/shm_shim.h>
+#endif
+
 #ifdef PLATFORM_WINDOWS
     #include <windows.h>
     #include <synchapi.h>
@@ -199,7 +204,13 @@ namespace lsp
                 S_IROTH | S_IWOTH;
 
             // Create shared memory segment
+            // HOJUIX PATCH
+            #if defined(__ANDROID__)
+            // Use android-compat SHM shim instead
+            int fd = bionic_shm_open(path, O_RDWR | O_CREAT, open_mode);
+            #else
             int fd = shm_open(path, O_RDWR | O_CREAT, open_mode);
+            #endif
             if (fd < 0)
             {
                 error = errno;
@@ -295,8 +306,11 @@ namespace lsp
                             default: return STATUS_UNKNOWN_ERR;
                         }
                     }
+                    // HOJUIX PATCH
+                    #if !defined(__ANDROID__)
                     if ((error = pthread_mutexattr_setrobust(&attr, PTHREAD_MUTEX_ROBUST)) != 0)
                         return STATUS_UNKNOWN_ERR;
+                    #endif
                     if ((error = pthread_mutex_init(&shmutex->mutex, &attr)) != 0)
                         return STATUS_UNKNOWN_ERR;
 
@@ -460,7 +474,10 @@ namespace lsp
                 case EBUSY: return STATUS_LOCKED;
                 case EOWNERDEAD:
                 {
+                    // HOJUIX PATCH
+                    #if !defined(__ANDROID__)
                     pthread_mutex_consistent(&hLock->mutex);
+                    #endif
                     break;
                 }
                 default: return STATUS_UNKNOWN_ERR;
@@ -541,7 +558,10 @@ namespace lsp
                 case ETIMEDOUT: return STATUS_TIMED_OUT;
                 case EOWNERDEAD:
                 {
+                    // HOJUIX PATCH
+                    #if !defined(__ANDROID__)
                     pthread_mutex_consistent(&hLock->mutex);
+                    #endif
                     break;
                 }
                 default: return STATUS_UNKNOWN_ERR;
@@ -624,7 +644,10 @@ namespace lsp
                 case EBUSY: return STATUS_RETRY;
                 case EOWNERDEAD:
                 {
+                    // HOJUIX PATCH
+                    #if !defined(__ANDROID__)
                     pthread_mutex_consistent(&hLock->mutex);
+                    #endif
                     break;
                 }
                 default: return STATUS_UNKNOWN_ERR;

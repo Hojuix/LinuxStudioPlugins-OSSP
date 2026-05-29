@@ -118,8 +118,14 @@ namespace lsp
             if (nname == NULL)
                 return STATUS_NO_MEM;
 
+        // HOJUIX PATCH
 		#if defined(_GNU_SOURCE) && !defined(PLATFORM_HAIKU)
-            char *var = secure_getenv(nname);
+            #if defined(__ANDROID__)
+                // Android NDK seems to be missing secure_getenv(), use standard getenv() instead
+                char *var = getenv(nname);
+            #else
+                char *var = secure_getenv(nname);
+            #endif
 		#else
             char *var = getenv(nname);
 		#endif

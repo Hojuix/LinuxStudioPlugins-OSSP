@@ -31,6 +31,11 @@
 #include <lsp-plug.in/runtime/system.h>
 #include <lsp-plug.in/runtime/uuid.h>
 
+// HOJUIX PATCH
+#if defined(__ANDROID__)
+#include <android-compat/shm_shim.h>
+#endif
+
 #ifdef PLATFORM_WINDOWS
     #include <windows.h>
     #include <memoryapi.h>
@@ -445,7 +450,13 @@ namespace lsp
             if (path == NULL)
                 return STATUS_NO_MEM;
 
+            // HOJUIX PATCH
+            #if defined(__ANDROID__)
+            // Use android-compat SHM shim instead
+            if (bionic_shm_unlink(path) < 0)
+            #else
             if (shm_unlink(path) < 0)
+            #endif
                 return STATUS_IO_ERROR;
         #endif /* PLATFORM_WINDOWS */
 
@@ -643,7 +654,13 @@ namespace lsp
                 S_IROTH | S_IWOTH;
             
             // Open/create shared memory segment
+            // HOJUIX PATCH
+            #if defined(__ANDROID__)
+            // Use android-compat SHM shim instead
+            const int fd = bionic_shm_open(path, o_flags, open_mode);
+            #else
             const int fd = shm_open(path, o_flags, open_mode);
+            #endif
             if (fd < 0)
             {
                 const int error = errno;

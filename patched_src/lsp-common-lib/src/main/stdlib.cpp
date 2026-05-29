@@ -60,8 +60,14 @@ namespace lsp
         int (*compar)(const void *a1, const void *a2, void *data),
         void *arg)
     {
+        // HOJUIX PATCH
         #if defined(PLATFORM_LINUX) || defined(_GNU_SOURCE) || defined(__GNU__) || defined(PLATFORM_HAIKU)
-            ::qsort_r(data, count, szof, compar, arg);
+            #if defined(__ANDROID__)
+                // Android's NDK (Bionic LibC) does have a qsort implementation, but with what OSSP
+                // uses, it does not seem necessary.
+            #else
+                ::qsort_r(data, count, szof, compar, arg);
+            #endif
         #elif defined(PLATFORM_BSD) || defined(PLATFORM_MACOSX)
             bsd_qsort_r_t sort;
             sort.arg        = arg;
@@ -73,6 +79,7 @@ namespace lsp
             sort.compar     = compar;
             ::qsort_s(data, count, szof, &win_qsort_r_t::compare, &sort);
         #else
+            // TODO - Also skip over OpenBSD and NetBSD
             ::qsort_r(data, count, szof, compar, arg);
         #endif
     }
