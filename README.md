@@ -24,26 +24,27 @@ as you can just load `libsndfile.so` using `System.loadLibrary()` at application
 ## Changes against upstream LSP Plugins
 NOTE: All changes made against upstream LSP Plugins contains a `// HOJUIX PATCH` line near them, so you can easily
 `grep` for them around the modified codebase.
-1 - A new `android-compat` folder.
+1. A new `android-compat` folder.
     - As the name implies, this folder contains code to allow LSP Plugins to both compile and run under Android,
     or more specifically Bionic LibC. At this point, the only addition it contains is an SHM (Shared
     memory) compatibility layer (Copied and modified from Termux's implementation)
-2 - `lsp-common-lib/src/main/stdlib.cpp` - QSort modification
+2. `lsp-common-lib/src/main/stdlib.cpp` - QSort modification
     - A lot of platforms either have different implementations or just don't implement QSort in their standard
     libraries. I don't really understand where and how this code is used, but with the modules that OSSP utilizes,
     nothing changes if this code is removed. This patch removes the code if there is not already a pre-existing
     implementation in the source code. If at a later date OSSP requires a plugin that utilizes this code,
     of course implementations for Android, OpenBSD, and NetBSD will be added.
-3 - `lsp-runtime-lib/src/main/runtime/system.cpp` - secure_getenv() modification
+3. `lsp-runtime-lib/src/main/runtime/system.cpp` - secure_getenv() modification
     - As far as I know, `secure_getenv()` is missing under Bionic LibC. Substituted for the standard
     `getenv()` instead when compiling for Android NDK based platforms.
-4 - `lsp-runtime-lib/src/main/ipc/SharedMem.cpp` - Use SHM (Shared Memory) functions from `android-compat`
+4. `lsp-runtime-lib/src/main/ipc/SharedMem.cpp` - Use SHM (Shared Memory) functions from `android-compat`
     - Include `shm_shim.h` from `android-compat` and utilize `bionic_shm_open()` and `bionic_shm_unlink()`
     instead `shm_open()` and `shm_unlink()` when compiling with the Android NDK.
-5 - `lsp-runtime-lib/src/main/ipc/SharedMutex.cpp` - Same as `SharedMem.cpp` above,
+5. `lsp-runtime-lib/src/main/ipc/SharedMutex.cpp` - Same as `SharedMem.cpp` above,
     - Also use an SHM shim function (for `shm_open()`), and remove some pthread functions. To be completely
     honest, I just removed these if compiling with the Android NDK, and everything seems to work absolutely fine.
     Of course, if these are required in the future, I will patch this properly.
+6. `lsp-runtime-lib/src/main/ipc/Thread.cpp`
 
 ## How to use
 The current PoC will only work on GLibC aarch64 (Tested on a Raspberry Pi)<br>
