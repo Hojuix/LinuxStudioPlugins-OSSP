@@ -62,10 +62,9 @@ namespace lsp
     {
         // HOJUIX PATCH
         #if defined(PLATFORM_LINUX) || defined(_GNU_SOURCE) || defined(__GNU__) || defined(PLATFORM_HAIKU)
-            #if defined(__ANDROID__)
+            #if !defined(__ANDROID__)
                 // Android's NDK (Bionic LibC) does have a qsort implementation, but with what OSSP
                 // uses, it does not seem necessary.
-            #else
                 ::qsort_r(data, count, szof, compar, arg);
             #endif
         #elif defined(PLATFORM_BSD) || defined(PLATFORM_MACOSX)

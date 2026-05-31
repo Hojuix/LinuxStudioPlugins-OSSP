@@ -242,8 +242,11 @@ namespace lsp
             pThis           = _this;
 
             // Cleanup cancellation state
+            // HOJUIX PATCH
+            #if !defined(__ANDROID__)
             pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
             pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
+            #endif
 
             // Wait until we are ready to launch
             while (!atomic_cas(&_this->enState, TS_PENDING, TS_RUNNING)) {}
