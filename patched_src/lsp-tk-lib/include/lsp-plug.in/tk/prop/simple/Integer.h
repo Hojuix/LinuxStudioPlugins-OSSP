@@ -1,0 +1,116 @@
+/*
+ * Copyright (C) 2026 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2026 Vladimir Sadovnikov <sadko4u@gmail.com>
+ *
+ * This file is part of lsp-tk-lib
+ * Created on: 6 мая 2020 г.
+ *
+ * lsp-tk-lib is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * lsp-tk-lib is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with lsp-tk-lib. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+#ifndef LSP_PLUG_IN_TK_PROP_INTEGER_H_
+#define LSP_PLUG_IN_TK_PROP_INTEGER_H_
+
+#ifndef LSP_PLUG_IN_TK_IMPL
+    #error "use <lsp-plug.in/tk/tk.h>"
+#endif
+
+namespace lsp
+{
+    namespace tk
+    {
+        /**
+         * Integer property interface
+         */
+        class Integer: public SimpleProperty
+        {
+            protected:
+                ssize_t             nValue;
+
+            protected:
+                virtual void        commit(atom_t property) override;
+                virtual void        push() override;
+
+            protected:
+                explicit Integer(prop::Listener *listener = NULL);
+                Integer(const Integer &) = delete;
+                Integer(Integer &&) = delete;
+                virtual ~Integer() override;
+
+                Integer & operator = (const Integer &) = delete;
+                Integer & operator = (Integer &&) = delete;
+
+            public:
+                /**
+                 * Get value of the integer property
+                 * @return value of the integer property
+                 */
+                inline ssize_t      get() const             { return nValue;                }
+
+                /**
+                 * Set value of the integer property
+                 * @param v value of the integer property
+                 * @return
+                 */
+                ssize_t             set(ssize_t v);
+                inline ssize_t      copy(const Integer *v)  { return set(v->nValue);        }
+
+                inline ssize_t      add(ssize_t v)          { return set(nValue + v);       }
+                inline ssize_t      sub(ssize_t v)          { return set(nValue - v);       }
+
+                /**
+                 * Swap contents
+                 * @param dst destination property to perform swap
+                 */
+                void                swap(Integer *dst);
+        };
+
+        namespace prop
+        {
+            /**
+             * Integer property implementation
+             */
+            class Integer: public tk::Integer
+            {
+                public:
+                    explicit Integer(prop::Listener *listener = NULL): tk::Integer(listener) {};
+                    Integer(const Integer &) = delete;
+                    Integer(Integer &&) = delete;
+
+                    Integer & operator = (const Integer &) = delete;
+                    Integer & operator = (Integer &&) = delete;
+
+                public:
+                    ssize_t             commit_value(ssize_t value);
+
+                    /**
+                     * Bind property with specified name to the style of linked widget
+                     */
+                    inline status_t     bind(atom_t property, Style *style)             { return SimpleProperty::bind(property, style, PT_INT, &sListener); }
+                    inline status_t     bind(const char *property, Style *style)        { return SimpleProperty::bind(property, style, PT_INT, &sListener); }
+                    inline status_t     bind(const LSPString *property, Style *style)   { return SimpleProperty::bind(property, style, PT_INT, &sListener); }
+
+                    /**
+                     * Unbind property
+                     */
+                    inline status_t     unbind()                                        { return SimpleProperty::unbind(&sListener); };
+
+                    inline void         listener(prop::Listener *listener)  { pListener = listener;                     }
+            };
+
+        } /* namespace prop */
+    } /* namespace tk */
+} /* namespace lsp */
+
+#endif /* LSP_PLUG_IN_TK_PROP_INTEGER_H_ */

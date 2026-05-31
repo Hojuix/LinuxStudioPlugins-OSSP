@@ -1,0 +1,117 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.27 ===
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Fixed improper char8 to char16 string conversion for VST SDK3.
+* Fixes in VST3 SDK headers: FUID has virtual destructor and can yield to
+  improper addressing FUnknown::iid value in debug compilation.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Updated VST3 SDK headers to support version 3.8.0.
+
+=== 1.0.23 ===
+* Updated VST3 SDK headers to support version 3.7.14.
+* Updated CLAP headers to support version 1.2.6.
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Updated CLAP headers to 1.2.2.
+* Updated VST3 headers to match the 3.7.12 SDK.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated CLAP headers to 1.2.1.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Added VST3 3.7.9 SDK interface definitions.
+* Updated CLAP headers to 1.2.0.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Updated CLAP plugin format headers up to version 1.1.8.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Updated module versions in dependencies.
+
+=== 1.0.7 ===
+* Added LV2 plugin format headers version 1.18.10.
+* Moved location of Ardour-related LV2 extensions.
+* Moved location of LADSPA headers.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.6 ===
+* Added CLAP plugin format headers version 1.1.6.
+* Moved VST 2.x headers to another locations.
+
+=== 1.0.5 ===
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Updated VST2 headers and definitions.
+* Updated build scripts.
+
+=== 1.0.1 ===
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Added support of building under LoongArch32 and LoongArch64 architectures.
+
+=== 0.5.1 ===
+* Updated build system.
+
+=== 0.5.0 ===
+* Initial version of 3rd party libraries
+

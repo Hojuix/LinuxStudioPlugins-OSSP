@@ -1,0 +1,127 @@
+/*
+ * Copyright (C) 2026 Linux Studio Plugins Project <https://lsp-plug.in/>
+ *           (C) 2026 Vladimir Sadovnikov <sadko4u@gmail.com>
+ *
+ * This file is part of lsp-ws-lib
+ * Created on: 16 янв. 2025 г.
+ *
+ * lsp-ws-lib is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * lsp-ws-lib is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with lsp-ws-lib. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+#ifndef PRIVATE_GL_GLXCONTEXT_H_
+#define PRIVATE_GL_GLXCONTEXT_H_
+
+#include <private/glx/defs.h>
+
+#ifdef LSP_PLUGINS_USE_OPENGL_GLX
+
+#include <lsp-plug.in/lltl/parray.h>
+#include <lsp-plug.in/runtime/LSPString.h>
+
+#include <private/x11/X11Drawable.h>
+#include <private/gl/IContext.h>
+#include <private/glx/vtbl.h>
+
+namespace lsp
+{
+    namespace ws
+    {
+        namespace glx
+        {
+            /**
+             * GLX context
+             */
+            class LSP_HIDDEN_MODIFIER Context: public gl::IContext
+            {
+                public:
+                    enum features_t
+                    {
+                        NO_FEATURES             = 0,
+                        FEATURES_INITIALIZED    = 1 << 0,
+                        OPENGL_3_3_OR_ABOVE     = 1 << 1,
+                        LAYOUT_SUPPORT          = 1 << 2,
+                        TEXTURE_MULTISAMPLE     = 1 << 3,
+                    };
+
+                private:
+                    enum pflags_t
+                    {
+                        PF_VERTEX       = 1 << 0,
+                        PF_FRAGMENT     = 1 << 1,
+                        PF_PROGRAM      = 1 << 2,
+                    };
+
+                    enum compile_status_t
+                    {
+                        SHADER,
+                        PROGRAM
+                    };
+
+                    typedef struct program_t
+                    {
+                        GLuint          nVertexId;
+                        GLuint          nFragmentId;
+                        GLuint          nProgramId;
+                        uint32_t        nFlags;
+                    } program_t;
+
+                private:
+                    ::Display          *pDisplay;
+                    ::GLXContext        hContext;
+                    x11::X11Drawable   *pDrawable;
+                    uint32_t            nFeatures;
+                    uint32_t            nMaxMultisample;
+
+                    lltl::parray<program_t> vPrograms;
+
+                private:
+                    static const char  *vertex_shader(gl::program_t program);
+                    static const char  *fragment_shader(gl::program_t program);
+
+                private:
+                    void                destroy(program_t *prg);
+                    bool                check_gl_error(const char *context);
+                    bool                check_compile_status(const char *context, GLenum id, compile_status_t type);
+                    bool                make_shader(LSPString &dst, const char *text) const;
+
+                public:
+                    explicit Context(::Display *dpy, ::GLXContext ctx, glx::vtbl_t *vtbl, uint32_t features, int max_multisample);
+                    virtual ~Context() override;
+
+                    virtual void        destroy() override;
+
+                public:
+                    virtual status_t    activate(ws::IDrawable * drawable) override;
+                    virtual status_t    program(size_t *id, gl::program_t program) override;
+                    virtual GLint       attribute_location(gl::program_t program, gl::attribute_t attribute) override;
+                    virtual uint32_t    multisample() const override;
+                    virtual void        swap_buffers(size_t width, size_t height) override;
+                    virtual size_t      width() const override;
+                    virtual size_t      height() const override;
+            };
+
+            /**
+             * Create GLX context
+             * @param display_name connection string to the display name
+             * @return pointer to created context or NULL
+             */
+            gl::IContext *create_context(const char *display_name);
+
+        } /* namespace glx */
+    } /* namespace ws */
+} /* namespace lsp */
+
+#endif /* LSP_PLUGINS_USE_OPENGL_GLX */
+
+#endif /* PRIVATE_GL_GLXCONTEXT_H_ */

@@ -1,0 +1,307 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.33 ===
+* Fixed widget redrawing atrifacts for some use cases.
+* Updated behaviour of the Knob for better quantization support.
+* Updated module versions in dependencies.
+
+=== 1.0.32 ===
+* Implemented tk::Image widget that can load and hold raster images.
+* Added frame skipping if surface is not ready for rendering. This may be useful
+  when we don't want to make the main UI thread to wait for a long time.
+* Updated module versions in dependencies.
+
+=== 1.0.31 ===
+* Updated module versions in dependencies.
+
+=== 1.0.30 ===
+* Implemented new tk::RangeSlider widget.
+* Implemented new tk::PianoKeys widget.
+* Implemented new tk::Embed widget for embedding into graph widget.
+* Fixed use after free for several scenarios when destroying the display.
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Added text clipping function for tk::Label.
+* Implemented AudioEnvelope widget and it's integration into AudioSample.
+* Implemented ws::IDisplay::get_file_descriptor method for obtaining event loop
+  descriptor for Unix-based systems that use X11 protocol
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Added support of background color, brightness and background brightness for
+  inactive widgets.
+* Activity property is now accessible for any widget.
+* Implemented Overlay widget.
+* Added MacOS dependencies.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Implemented OpenGL drawing surface supporf for X11 protocol. Can be disabled
+  by setting LSP_WS_LIB_GLXSURFACE=off environment variable.
+* Improved size estimation algorithm for tk::Label widget.
+* Added inactive state and colors for following widgets:
+  * tk::Button;
+  * tk::CheckBox;
+  * tk::ComboBox;
+  * tk::Edit;
+  * tk::Fader;
+  * tk::FileButton;
+  * tk::Fraction;
+  * tk::Indicator;
+  * tk::Knob;
+  * tk::Led;
+  * tk::ListBox;
+  * tk::ListBoxItem;
+  * tk::MenuItem;
+  * tk::ProgressBar;
+  * tk::RadioButton;
+  * tk::ScrollBar;
+  * tk::Tab;
+  * tk::TabItem.
+* Removed tk::Switch widget as being outdated.
+* Optimized surface drawing and sizing algorithm.
+* Rendering optimizations in widget containers.
+* Removed outdated RackEars widget.
+* Updated widget drawing code to match new interface of ws::IGradient.
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Removed internal key auto-repeat simulation for tk::ListBox.
+* Updated text clipping algorithm for tk::Button.
+* Fixed bun in tk::ListBox widget which didn't allow to scroll the list box
+  when using keyboard keys.
+* Implemented TabGroup widget.
+* Implemented shortcut handling mechancs by tk::Window.
+* Small bugfix in LedMeterChannel related to header display.
+* Added maximum amplitude property to AudioChannel and AudioSample.
+* Added possibility to draw background around tk::GraphText widget.
+* Fixed stylesheets: keeping the order of properties same to the order in the XML
+  document when stylesheet is applied to styles.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Improved ListBox behaviour relative to the item size.
+* Bugfixes in tk::ListBox related to item creation, deletion and selection.
+* Added text estimation suppot for tk::Button widget. 
+* Added aggregate size computation (enabled by default) for tk::TabControl widget.
+* Fixed bug in bookmak editor (set first/last actions) of the tk::FileDialog widget.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Added header support by tk::LedMeterChannel.
+* Added header support by tk::LedMeter.
+* Implemented SLOT_MOUSE_POINTER slot for overriding mouse pointer.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Added empty text property for edit.
+* Added text size estimation feature to the tk::Label widget.
+* Fixed illegal memory access when destroying Box, Grid and Menu widgets.
+* Added tab.pointer property to the tk::TabControl.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Added possibility to control the value set to RangeFloat and Float properties.
+* Fixed illegal memory access when destroying Box, Grid and Menu widgets.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Optimized work with atoms.
+* Many code updates that could cause potential problems related to using another
+  decimal point for floating-point number formatting.
+* FileDialog now synchronizes the state of selected_filter property.
+* Implemented widget overrides by priority on the graph widget.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Added 'zero' property to tk::GraphAxis to associate the position of origin on
+  the axis with some value.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Improved code base by using PVS Studio static code analyzer.
+* Fixed several issues reported by PVS Studio static analyzer.
+* Added tk::Menu::showmp method to show menu at current mouse cursor's position
+  as a window transient for specified widget.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Several fixes and optimizations related to tk::LedMeterChannel and tk::LedMeter.
+* Fixed bug in tk::TabControl widget destruction.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Added 'Editable' property to tk::Knob widget.
+* Optimized window move operation (does not require realize if window size did
+  not change).
+* Implemented graph line segment widget.
+* Added meter feature to knob.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Fixed invalid tk::TF_VERTICAL tether flag value.
+* Added possibility to hide check/radio box for unchecked tk::MenuItem objects.
+* Added SLOT_BEGIN_EDIT and SLOT_END_EDIT slot events.
+* Fixed improper value calculation in cycling knob when clicking on the knob's scale.
+* Added support of SLOT_BEGIN_EDIT and SLOT_END_EDIT by tk::Knob, tk::Fader,
+  tk::ScrollBar, tk::GraphDot and tk::GraphMarker widgets.
+* Added support of named widget groups.
+* Added tk::Widget::has_parent method.
+* Changed checkbox/radio button space allocation algorithm for Menu and MenuItem.
+* Updated dependencies file.
+* Added test build for Windows using MSYS2.
+* Added missing tk::Grid::remove_all() method implementation.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.7 ===
+* Added possibility to enable/disable Knob's scale actions.
+
+=== 1.0.6 ===
+* Added stretch and loop markers to the AudioChannel and AudioSample widgets.
+* Added tk::Tab and tk::TabControl widgets.
+* Additional functions to work with coordinates provided in the tk::Graph: xy_to_axis, axis_to_xy.
+* Improved widget tk::Grid space allocation algorithm that eliminates rows/columns which contain
+  widgets that share space across other rows/columns. 
+* Added support of cusom file preview embedding into tk::FileDialog widget.
+* Fixed problems with scrolling of the tk::ListBox.
+* Fixed operations on undefined values in tk::CheckBox and tk::RadioButton.
+* Updated build scripts.
+
+=== 1.0.5 ===
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Added support of Windows operating system.
+* Added support of modern C++ 11 standard and above.
+* Updated build scripts.
+* Added more formats for URLSink (Windows support).
+* Fixed bug in ListBox widget that could result in memory corruption.
+* Migrated from popup window arrangement paradigm to the tether paradigm.
+* Added volume listing to the tk::FileDialog.
+* Added element hovering for ListBox widget and derived ComboBox and ComboGroup widgets.
+
+=== 1.0.3 ===
+* Added Window::has_parent() method to check that window is embedded into another window.
+* Added Display::enum_monitors() method to query current state of connected monitors.
+* Added xrandr library dependency for the X.11-compatible systems.
+* Updated window appearance algorithm.
+* Added ipadding() property to the tk::Label widget.
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Added template get() method for the tk::Registry that allows to obtain widget of specific type.
+* Updated key event handling algorithm in the tk::Window class.
+* Added FileDialog::Search style for the 'Search' edit control.
+* Changed the space allocation algorithm for the edit control (now border gap does not depend
+  on border size).
+* Renamed public method for prop::String from 'commit' to 'commit_value'.
+* Fixed bug that could cause improper window sizing in several cases.
+
+=== 1.0.1 ===
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Bugfixes for the tk::GraphDot widget.
+* Added new Display::wait_events() method for polling display for incoming events.
+* Updated rendering of tk::LedMeterChannel widget.
+* Fixed NULL dereference when linking styles in the schema.
+* Refactoring of widget rendering, allmost all usages of Color::scale_lightness
+  replaced with Color::scale_lch_luminance.
+* Added 'reduce' options to prop::Allocation property.
+* Added 'reduce' options handling by tk::Box and tk::Grid widgets.
+* Fixed bug in prop::StringList which could yield to ignore of localization parameters.
+* Added support of CIE XYZ D65, CIE LAB D65, CIE LCH D65 and CMYK color schemes for tk::Color property.
+* Implemented tk::Schema::add methods for adding custom styles at the initialization stage.
+* Fixed bug in clipboard paste for tk::TextDataSink class.
+* Updated brightness control for LED channels grouped into LED meters.
+* Added border radius support to the tk::Menu widget.
+* Fixed prolbem with scrollbar sync for the tk::ListBox widget.
+
+=== 0.5.1 ===
+* Updated code to match lltl library headers.
+* Better integration with system::follow_url() routine.
+* Added automatic style creation from XML schema.
+* Added simple language configuration support by the tk::Schema class.
+* Fixed allocation for invisible widgets inside the tk::Grid container.
+* Updated behaviour of TextDataSink to be more memory-effective.
+* Property 'size_constraints' renamed to 'constraints' for tk::Align and tk::Group widgets.
+* Added 'set_horizontal' and 'set_vertical' methods to the embedding property.
+* Fixed crash on empty tk::Grid container, added constraints() property to the tk::Grid widget.
+* Added parse() method to all enumeration properties.
+* Fixed knob behaviour which didn't trigger SLOT_CHANGE event when dragging knob's scale.
+* Added ipadding() property for internal padding of the tk::Group widget.
+* Fixed bugs reladed to SLOT_CHANGE notification delivery for tk::Switch widget.
+* Added drawing mode for the widget that allows to switch between different kinds of widget look.
+* Added basic background color inheritance support to widgets.
+* Rendering of graph widget has been fixed and enhanced with "border.flat" property.
+* Replaced text_border property for tk::Group widget with text_padding property.
+* Added heading property for tk::Group widget.
+* Replaced text_border property for tk::ComboGroup widget with text_padding property.
+* Added heading property for tk::ComboGroup widget.
+* Fixed missing builtin styles for tk::ComboGroup widget.
+* Added spin_spacing property to tk::ComboGroup widget.
+* Added 'balance_color', 'balance_color_custom', 'flat' and 'scale_marks' properties to the tk::Knob widget.
+* Added font scaling feature to the tk::Font property.
+* Added freetype2 library dependencies for UNIX-compatible operating systems.
+* Added possibility to specify custom fonts in the stylesheet data.
+* Added font loading support by the tk::Schema object.
+* Fixed bug in menu item allocation that could yield to ugly-looking menus.
+* Implemented proper UI schema loading at the runtime.
+* Added tk::Registry class for managing widgets.
+* Denied copy constructor usage for all widget classes.
+* Added tk::Bevel widget which allows to draw bevels/facets in the UI.
+* Added tk::Arrangement property which allows to arrange some element inside of another.
+* Indicator now supports modern-style drawing.
+* Added tk::MultiLabel widget for drawing vector glyphs.
+* Added tk::TextAdjust property and support of this property by several widgets.
+* Added support of hovers by the tk::Label widget.
+* Fixed bug with UIE_MOUSE_IN and UIE_MOUSE_OUT event delivery when entering/leaving window.
+* tk::Button now allows to use different colors for different states.
+* Removed obsolete tk::StyleInitializer class.
+* Fixed memory corruption in tk::Grid widget related to invalid cell pointers after reallocation of memory chunk.
+* Additional feature added to ComboGroup that allows to select the active visible widget.
+* Updated build system.
+
+=== 0.5.0 ===
+* Initial release.
+

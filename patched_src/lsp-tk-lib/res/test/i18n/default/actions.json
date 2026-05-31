@@ -1,0 +1,35 @@
+{
+	"cancel": "Cancel",
+	"nav": {
+		"go": "Go",
+		"up": "Up"
+	},
+	"to_bookmarks": "+Bookmarks",
+	"dlg": {
+		"open": "Open dialog",
+		"open_preview": "Open dialog with preview",
+		"save": "Save dialog",
+		"save_preview": "Save dialog with preview"
+	},
+	"open": "Open",
+	"save": "Save",
+	"link": {
+		"follow": "Follow link",
+		"copy": "Copy link"
+	},
+	"edit": {
+		"delete": "Delete",
+		"move_first": "Move first",
+		"move_last": "Move last",
+		"move_up": "Move up",
+		"move_down": "Move down",
+		"cut": "Cut",
+		"copy": "Copy",
+		"paste": "Paste"
+	},
+	"confirm": {
+		"yes": "Yes",
+		"no": "No"
+	},
+	"ok": "OK"
+}

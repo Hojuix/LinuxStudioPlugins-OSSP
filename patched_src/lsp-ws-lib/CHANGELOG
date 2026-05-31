@@ -1,0 +1,236 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.33 ===
+* Fixed several memory leaks in Cairo surfaces.
+* Updated module versions in dependencies.
+
+=== 1.0.32 ===
+* Moved OpenGL rendering mechanism to a separate thread.
+* Changed the meaning of window constraints from strict constraints to
+  window manager hints.
+* Added test for drawing raster icons.
+* Improvements related to window rendering for X11.
+* Updated module versions in dependencies.
+
+=== 1.0.31 ===
+* Updated module versions in dependencies.
+
+=== 1.0.30 ===
+* Updated module versions in dependencies.
+
+=== 1.0.29 ===
+* Added experimental support of MacOS with Cairo and Freetype libraries.
+* Implemented ws::IDisplay::get_file_descriptor method for obtaining event loop
+  descriptor for Unix-based systems that use X11 protocol
+* Updated module versions in dependencies.
+
+=== 1.0.28 ===
+* Added support of minimized, maximized and normal window state settings.
+* Implemented fill_rect method for ws::ISurface with surface argument.
+* Added set_origin method for ws::ISurface interface.
+* Added MacOS dependencies.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Implemented OpenGL drawing surface supporf for X11 protocol. Can be disabled
+  by setting LSP_WS_LIB_GLXSURFACE=off environment variable.
+* Added support of system fonts lookup in FontManager.
+* Updated Drag&Drop handling to be more optimistic: if nested widget does not
+  reject Drag&Drop operation, then we try to handle the Drag&Drop operation by
+  the parent widget.
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Fixed z fighting cases between windows under Windows platform.
+* Fixed UI over-scaling due to DPI taken from the system settings.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Using inplace new from common library.
+* Some optimizations of X11CairoSurface.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Improved code base by using PVS Studio static code analyzer.
+* Improved text rendering for Windows platform.
+* Significant improvements related to rectangle area clipping for Windows platform.
+* Several improvements against grabbing events for Windows.
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Fixed bug in the ws::ft::FontManager which could yield memory corrption after
+  complete font manager cleanup.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Fixed clang build error.
+
+=== 1.0.10 ===
+* The library now uses FreeType for rendering custom fonts, avoiding cairo cache.
+* The library now requires to call ws::init() before proceeding with other operations.
+* Added new dependency on lsp-dsp-lib for text rendering using glyph bitmaps.
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Fixed crash (BadMatch) for Fluxbox window manager on popup windows.
+* Fixed popup window heading display in Fluxbox.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Fix GetLastError not being called in several functions for Windows
+  (contributed by Imre Gera).
+* Fixed bug related to improper behaviour of X11CairoSurface::draw_raw function.
+* Updated dependencies file.
+* Added test build for Windows using MSYS2.
+* More accurate TRANSIENT_FOR hint setting for X11.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.7 ===
+* Fixed UIE_MOUSE_IN and UIE_MOUSE_OUT event handling for locked X11 windows.
+* Fixed memory issues related to X11 Mime read support.
+* Added Clang build for the CI.
+
+=== 1.0.6 ===
+* Updated build scripts.
+
+=== 1.0.5 ===
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Introduced support of Windows platform for window management.
+* Added support of modern C++ starting with C++ 11.
+* Method ws::IWindow::set_focus() replaced by ws::IWindow::take_focus().
+* Removed method ws::IWindow::toggle_focus().
+* Removed method ws::IWindow::check_constraints().
+* Changed the ws::IWindow::set_caption() method signature.
+* Changed the values for ws::MP_DEFAULT mouse cursor constant.
+* Changed set of methods and signature of methods for the ws::ISurface.
+* Updated build scripts.
+
+=== 1.0.3 ===
+* Added IWindow::has_parent() method to check that window is embedded into another window.
+* Added IDisplay::enum_monitors() method to query current state of connected monitors.
+* Added xrandr library dependency for the X.11-compatible systems.
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Fixed bugs related to usage of custom installation prefix.
+* Fixed bug that caused improper window sizing when applying window constraints.
+* Moved X11 event decoding to public interface.
+* Updated headers.
+
+=== 1.0.1 ===
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Added new IDisplay::wait_events() method for polling display for incoming events.
+* Added R3D backend deduplication support.
+
+=== 0.5.4 ===
+* Added BadWindow error handling for the XTranslateCoordinates call that could cause
+  the program to crash.
+* Added ISurface::wire_round_rect_inside() methods.
+* Added support of loading custom fonts using freetype library.
+* Fixed antialiasing problem which allows to force enable of font antialiasing.
+* Incompatible change: changed binary font antialiasing option to enumeration. 
+* Added dependency on the freetype2 library for Unix-based systems.
+* More strict interface classes.
+* Updated build system.
+
+=== 0.5.3 ===
+* Changed signature of ISurface::fill_poly, ISurface::wire_poly and ISurface::draw_poly methods.
+* Added ISurface::draw method that uses ws::rectangle_t as an argument.
+* Updated task scheduling interface: now the time the task has been scheduled is returned to handler.
+* Fixed issues with improper font rendering and size estimation.
+
+=== 0.5.2 ===
+* Added nPreWidth and nPreHeight to ws::size_limit_t structure which should contain
+  preferred width and height values.
+* Fixed uninitialized pointer dereference in X11Display.
+* Updated build scripts that now use tags without prefixes first.
+* Updated headers and license files to match LGPL3+ license.
+* Updated make files to produce static library, pkgconf file and source tree.
+
+=== 0.5.1 ===
+* Removed ui_handler_id_t from types.
+* Renamed constant BS_SIZABLE to BS_SIZEABLE.
+* Fixed typo in MP_VSPLIT constant.
+* Now constants in mcf_t enumeration may be computed as 1 << mcb_t
+  enumeration element except special code MCB_NONE.
+* Added ws::init_event function for clearing ws::event_t structure.
+* Added UIE_MOUSE_CLICK event.
+* Added UIE_MOUSE_CLICK event detection and generation for X11.
+* Added antialiasing flag to font parameters (by default disabled).
+* Font flags enumeration constants are now public.
+* Added estimation surface support by IDisplay interface.
+* ws::MP_DEFAULT now is a separate constant, not an alias to ws::MP_ARROW.
+* Renamed ws::ws_code_t to ws::code_t.
+* Renamed ws::ws_keycodes_t to ws::keycode_t.
+* Added following mouse cursors:
+  * ws::MP_ARROW_LEFT
+  * ws::MP_ARROW_RIGHT
+  * ws::MP_ARROW_UP
+  * ws::MP_ARROW_DOWN
+* Changed interface of ws::ISurface related to following drawing functions:
+  * out_text()
+  * out_text_relative()
+  * get_text_parameters()
+  * fill_rect()
+  * wire_rect()
+  * fill_round_rect()
+  * fill_frame()
+  * fill_round_fame()
+  * wire_round_rect()
+* Added IDisplay::get_pointer_location() method for lookup of mouse pointer location.
+
+=== 0.5.0 ===
+* Initial release.
+

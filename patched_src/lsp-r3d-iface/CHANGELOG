@@ -1,0 +1,128 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.28 ===
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Added MacOS CI builds.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Added dependencies for MacOS.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Added test build for Windows using MSYS2.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Added Clang build for the CI.
+
+=== 1.0.7 ===
+* Updated build scripts.
+
+=== 1.0.6 ===
+* Updated build scripts.
+
+=== 1.0.5 ===
+* Simplified interface related to reading pixel data of the off-screen buffer.
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Updated build scripts.
+
+=== 1.0.3 ===
+* Changed C++ standard to C++ 11.
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Updated build scripts.
+
+=== 1.0.1 ===
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Added BUFFER_STD_BLENDING flag to buffer flags.
+* Added user data and destruction function to r3d::buffer_t type.
+* Added function description for checking version of the R3D interface in use.
+
+=== 0.5.2 ===
+* Updated build system.
+
+=== 0.5.1 ===
+* Updated factory function prototype: added integer parameter for 
+  enumeration capabilities.
+* Added LSP_R3D_BULTIN_FACTORY_FUNCTION macro.
+* Added Factory::enumerate(index) method to enumerate built-in factories.
+* Updated interface of r3d::buffer_t structure.
+* Submitted r3d::init_buffer function for initializing buffer with default data.
+
+=== 0.5.0 ===
+* Initial release.
+* Split interface code from lsp-r3d-base-lib.
+* Added possibility to define built-in R3D factory.
+* Added compatibility with window subsystem flag.
+

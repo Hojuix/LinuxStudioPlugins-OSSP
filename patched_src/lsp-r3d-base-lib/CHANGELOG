@@ -1,0 +1,131 @@
+*******************************************************************************
+* RECENT CHANGES
+*******************************************************************************
+
+=== 1.0.28 ===
+* Updated module versions in dependencies.
+
+=== 1.0.27 ===
+* Updated module versions in dependencies.
+
+=== 1.0.26 ===
+* Updated module versions in dependencies.
+
+=== 1.0.25 ===
+* Added MacOS CI builds.
+* Updated module versions in dependencies.
+
+=== 1.0.24 ===
+* Added MacOS dependencies.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.23 ===
+* Updated module versions in dependencies.
+
+=== 1.0.22 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.21 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.20 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.19 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.18 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.17 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.16 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.15 ===
+* Updated module versions in dependencies.
+
+=== 1.0.14 ===
+* Updated module versions in dependencies.
+
+=== 1.0.13 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.12 ===
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.11 ===
+* Removed Makefile.d. Dependencies are now automatically generated at the build stage.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.10 ===
+* Updated module versions in dependencies.
+
+=== 1.0.9 ===
+* Added test build for Windows using MSYS2.
+* Updated build scripts.
+* Updated module versions in dependencies.
+
+=== 1.0.8 ===
+* Added Clang build for the CI.
+
+=== 1.0.7 ===
+* Updated build scripts.
+
+=== 1.0.6 ===
+* Updated build scripts.
+
+=== 1.0.5 ===
+* Added memswap() function for vertical flipping support of the image.
+* Updated build scripts.
+
+=== 1.0.4 ===
+* Updated build scripts.
+
+=== 1.0.3 ===
+* Moving towards C++ 11.
+* Updated build scripts.
+
+=== 1.0.2 ===
+* Updated build scripts.
+
+=== 1.0.1 ===
+* Updated build scripts.
+
+=== 1.0.0 ===
+* Updated build system.
+
+=== 0.5.5 ===
+* Updated build system.
+
+=== 0.5.4 ===
+* Split all interface code into lsp-r3d-iface.
+
+=== 0.5.3 ===
+* Updated build scripts that now use tags without prefixes first.
+* Updated headers and license files to match LGPL3+ license.
+* Updated make files to produce static library, pkgconf file and source tree.
+
+=== 0.5.2 ===
+* Build updates.
+
+=== 0.5.1 ===
+* Modified base R3D interface constants and metadata structures.
+
+=== 0.5.0 ===
+* Initial release.
+* Base 3D rendering backend.
+* Common 3D rendering backend implementation.
+
