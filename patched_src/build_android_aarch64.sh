@@ -1,12 +1,11 @@
-set -e
+set -e # Exit on error
 
-LD=/Users/user/Developer/Tooling/NDK-r27d/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld.lld
-CXX=/Users/user/Developer/Tooling/NDK-r27d/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android31-clang++
-#LD=ld
-#CXX=g++
+LD=/home/user/Desktop/android-ndk-r27d/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld
+CXX=/home/user/Desktop/android-ndk-r27d/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android31-clang++
 
-CFLAGS="-fPIC -march=armv8-a -O2 -fvisibility=hidden -fno-exceptions -fno-rtti -fdata-sections -ffunction-sections -fno-asynchronous-unwind-tables -pipe -Wall"
-SYSROOT="/Users/user/Developer/Upstream/LSP-Sysroot"
+# Using '-I .' in CFLAGS so I can include the android compatbility stuff with '#include <android-compat/...>'
+CFLAGS="-fPIC -march=armv8-a -O2 -fvisibility=hidden -fno-exceptions -fno-rtti -fdata-sections -ffunction-sections -fno-asynchronous-unwind-tables -pipe -Wall -I ."
+SYSROOT="/home/user/Desktop/Actual_LSP_Sysroot"
 SYSROOT_INC=$SYSROOT/include
 SYSROOT_LIB=$SYSROOT/lib
 
@@ -800,13 +799,15 @@ mkdir -p build-lsp-plugin-fw/src/main/meta
 build_lsp_plugin_fw "lsp-plugin-fw/src/main/meta/func.cpp"
 build_lsp_plugin_fw "lsp-plugin-fw/src/main/meta/manifest.cpp"
 build_lsp_plugin_fw "lsp-plugin-fw/src/main/meta/ports.cpp"
+build_lsp_plugin_fw "lsp-plugin-fw/src/main/meta/registry.cpp"
 
 echo "LD lsp-plugin-fw-meta.o"
 $LD \
     -o build-lsp-plugin-fw/lsp-plugin-fw-meta.o \
     -r build-lsp-plugin-fw/src/main/meta/func.o \
     -r build-lsp-plugin-fw/src/main/meta/manifest.o \
-    -r build-lsp-plugin-fw/src/main/meta/ports.o
+    -r build-lsp-plugin-fw/src/main/meta/ports.o \
+    -r build-lsp-plugin-fw/src/main/meta/registry.o
 
 # lsp-plugin-fw-dsp
 mkdir build-lsp-plugin-fw/src/main/plug
@@ -845,21 +846,12 @@ $LD \
     -o build-lsp-plugins-para-equalizer/lsp-plugins-para-equalizer-dsp.o \
     -r build-lsp-plugins-para-equalizer/src/main/plug/para_equalizer.o
 
-# Generate a stub??
-#echo "#include <stdio.h>" > lsp-plugins-para-equalizer/src/main/stub.cpp
-#build_lsp_plugins_para_equalizer "lsp-plugins-para-equalizer/src/main/stub.cpp"
-#$LD \
-#    -o build-lsp-plugins-para-equalizer/lsp-plugins-para-equalizer-shared.o \
-#    -r build-lsp-plugins-para-equalizer/src/main/stub.o
-
 echo "Building Android Compat Layer"
 
 $CXX \
     -o android-compat/shm_shim.o \
     -c android-compat/shm_shim.c \
-    -fPIC -march=armv8-a -O2 -fvisibility=hidden -fno-exceptions -fno-rtti -fdata-sections -ffunction-sections \
-    -fno-asynchronous-unwind-tables -pipe -Wall -g \
-    -Wno-alloca
+    $CFLAGS -Wno-alloca
 
 echo "Finalizing"
 $CXX \
@@ -879,10 +871,6 @@ $CXX \
     build-lsp-plugin-fw/src/wrap/lv2.o \
     android-compat/shm_shim.o \
     -march=armv8-a -Wl,-z,relro,-z,now -Wl,--gc-sections -Wl,-as-needed -shared -fPIC -ldl -lsndfile
-    #-march=armv8-a -Wl,-z,relro,-z,now -Wl,--gc-sections -Wl,-as-needed -shared  -DGWP_ASAN_DEFAULT_OPTIONS="Enabled=0" -ftls-model=global-dynamic -fPIC -ldl -Wl,-Bstatic -lsndfile
-    #-march=armv8-a -Wl,-z,relro,-z,now -Wl,--gc-sections -Wl,-as-needed -shared -ftls-model=global-dynamic -Wl,-Bdynamic -fPIC -ldl -Wl,-Bstatic -lsndfile
-    #-march=armv8-a -Wl,-z,relro,-z,now -Wl,--gc-sections -Wl,-as-needed -shared -fPIC -ldl -lsndfile -static
-    #build-lsp-plugin-fw/lv2.o \
-#    build-lsp-plugin-fw/lsp-plugin-fw-res.o \
-#    build-lsp-plugin--- \
-#build_lsp_plugin_fw "lsp-plugin-fw/src/wrap/lv2.cpp"
+
+# Debugging
+# -march=armv8-a -Wl,-soname,liblsp-plugins-lv2.so -Wl,-z,relro,-z,now -Wl,--gc-sections -Wl,-as-needed -shared -fPIC -ldl -lsndfile

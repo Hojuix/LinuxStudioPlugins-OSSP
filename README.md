@@ -19,7 +19,10 @@ A static version of `libsndfile` cannot be linked into `lsp-plugins-lv2.so` (at 
 context using the Android NDK) because it, for some reason unbeknownst to me, somehow enables `GWP-ASan`,
 which Bionic LibC's `libdl()` seems to absolutely hate. I haven't tested this on other platforms at this time
 (2026/05/28) as this out-of-tree build system doesn't support x86_64 yet. This is very easy to work around though,
-as you can just load `libsndfile.so` using `System.loadLibrary()` at application init time.
+as you can just load `libsndfile.so` using `System.loadLibrary()` at application init time.<br>
+Also, this is built and tested against Android NDK version r27d. It should theoretically build on any version of
+the NDK, but start here if you have issues as it is the current (as of writing) LTS version.<br>
+Along with that, the tested host operating system for building is Linux Mint x86_64.
 
 ## Changes against upstream LSP Plugins
 NOTE: All changes made against upstream LSP Plugins contains a `// HOJUIX PATCH` line near them, so you can easily
@@ -51,7 +54,17 @@ The current PoC will only work on GLibC aarch64 (Tested on a Raspberry Pi)<br>
 Step 1 - Download the official LSP Plugins source code<br>
 Step 2 - Run `build-aarch64-PoC.sh`<br>
 Step 3 - Do a native build for the `utils-bin/lv2ttl_gen` executable<br>
-         - I don't think `lv2ttl_gen` and the target's archtecture `lsp-plugins-lv2.so` have to be the same.<br>
+         - The architecture of the `lv2ttl_gen` binary and the target's architecture (what `lsp-plugins-lv2.so` is built against) do not have to be the same.
          - Oh and yes, this will be added into this build system (probably)<br>
 Step 4 - Run `lv2ttl_gen` against the generated `.so` file with: `mkdir out && ./lv2ttl_gen -i lv2-plugins-lv2.so -o out`<br>
 And that's it. Copy the required `ttl` file along with `manifest.ttl` and `lv2-plugins-lv2.so` to the LV2 directory.
+
+## Debugging on Android
+For some completely absurd reason, Gstreamer on Android does not seem to log anywhere that an LV2 plugin has
+failed to load. Along with this, there is of course absolutely no error messages. This made debugging
+an absolute nightmare. To counteract this, I have left a replacement line of code in the bottom
+of the android build script. This is used to build a version of the library that has an `soname` field
+that can be used to add compatibility to load it at initial runtime instead of dynamically by Gstreamer. Doing this is
+absolutely useless for playback, as Gstreamer still cannot use the plugin, but if it does error for some reason,
+Android's `dlopen()` function will print errors through logcat! This is the ONLY way I have found to debug these
+issues on Android.
