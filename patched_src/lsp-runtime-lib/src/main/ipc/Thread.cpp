@@ -376,6 +376,8 @@ namespace lsp
             result                  = lwp_gettid();
         #elif defined (PLATFORM_HAIKU)
             result                  = find_thread(NULL);
+        #elif defined(PLATFORM_OPENBSD)
+            result                  = getthrid();
         #else
             #error "need to implement Thread::current_thread_id"
         #endif

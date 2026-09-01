@@ -68,17 +68,20 @@ namespace lsp
                 ::qsort_r(data, count, szof, compar, arg);
             #endif
         #elif defined(PLATFORM_BSD) || defined(PLATFORM_MACOSX)
-            bsd_qsort_r_t sort;
-            sort.arg        = arg;
-            sort.compar     = compar;
-            ::qsort_r(data, count, szof, &sort, &bsd_qsort_r_t::compare);
+            #if !defined(PLATFORM_OPENBSD)
+                // Ignore OpenBSD for now
+                bsd_qsort_r_t sort;
+                sort.arg        = arg;
+                sort.compar     = compar;
+                ::qsort_r(data, count, szof, &sort, &bsd_qsort_r_t::compare);
+            #endif
         #elif defined(PLATFORM_WINDOWS)
             win_qsort_r_t sort;
             sort.arg        = arg;
             sort.compar     = compar;
             ::qsort_s(data, count, szof, &win_qsort_r_t::compare, &sort);
         #else
-            // TODO - Also skip over OpenBSD and NetBSD
+            // TODO - NetBSD Support?
             ::qsort_r(data, count, szof, compar, arg);
         #endif
     }
